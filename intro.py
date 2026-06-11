@@ -9,7 +9,7 @@ def get_base64(file):
         data = f.read()
     return base64.b64encode(data).decode()
 
-img_base64 = get_base64("rbg.jpg")
+img_base64 = get_base64("images/rbg.jpg")
 
 # ---------- HERO SECTION ----------
 st.markdown(f"""
