@@ -3,7 +3,7 @@ import os
 
 st.set_page_config(page_title="My Portfolio", layout="wide")
 
-# ----------BACKGROUND SETUP ----------
+# ---------- JAPAN RAINY FOREST BACKGROUND SETUP ----------
 bg_image = "https://images.unsplash.com/photo-1542051841857-5f90071e7989?q=80&w=1920&auto=format&fit=crop"
 
 st.markdown(f"""
@@ -16,26 +16,29 @@ st.markdown(f"""
 }}
 /* High-visibility container boxes for text sections */
 .glass-panel {{
-    background-color: rgba(15, 15, 26, 0.75);
+    background-color: rgba(15, 15, 26, 0.78);
     padding: 25px;
     border-radius: 15px;
     border: 1px solid rgba(255, 255, 255, 0.08);
     margin-bottom: 20px;
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
 }}
+/* FORCING MAXIMUM BOLDNESS AND LEGIBILITY ON HEADERS */
 h1, h2, h3, h4 {{
     color: #50fa7b !important;
-    font-weight: 700 !important;
+    font-weight: 800 !important;  /* Ultra thick bolding */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8) !important; /* Adds depth */
     margin-top: 0px !important;
 }}
 p, span, li, div {{
     color: #ffffff !important;
     font-size: 16px;
+    font-weight: 500 !important; /* Makes body text slightly thicker too */
 }}
 a {{
     color: #50fa7b !important;
     text-decoration: none !important;
-    font-weight: 600;
+    font-weight: 700 !important; /* Bold links */
 }}
 a:hover {{
     text-decoration: underline !important;
@@ -70,7 +73,7 @@ with col2:
 st.markdown('''
 <div class="glass-panel">
     <h2>Skills</h2>
-    <p style="color: #50fa7b !important; font-weight: 600; font-size: 18px;">
+    <p style="color: #50fa7b !important; font-weight: 700; font-size: 18px; text-shadow: 1px 1px 3px rgba(0,0,0,0.5);">
         ⚡ Python  |  SQL  |  Pandas  |  NumPy  |  Matplotlib | Seaborn
     </p>
 </div>
@@ -80,7 +83,7 @@ st.markdown('''
 st.markdown('''
 <div class="glass-panel">
     <h2>Projects</h2>
-    <h4 style="color: #ffffff !important;">Project no. 1: Video Game Market Analysis</h4>
+    <h4 style="color: #ffffff !important; font-weight: 700 !important;">Project no. 1: Video Game Market Analysis</h4>
     <p>An end-to-end data processing and analysis project exploring historical video game industry sales trends.</p>
     <a href="https://github.com/roshankshah2005-creator/Video-Game-Market-Analysis/tree/main" target="_blank">🔗 GitHub Link: Video Game Market Analysis</a>
 </div>
