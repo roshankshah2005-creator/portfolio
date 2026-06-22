@@ -22,7 +22,7 @@ def get_base64_safely(file_path):
 
 # Point directly to your images directory
 images_dir = "./images"
-background_path = os.path.join(images_dir, "OIP.jpg")
+background_path = os.path.join(images_dir, "rbg.jpg")
 photo_path = os.path.join(images_dir, "image.jpeg")
 
 # Safely attempt to encode the background image
