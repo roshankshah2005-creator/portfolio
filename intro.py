@@ -9,7 +9,7 @@ def get_base64(file):
         data = f.read()
     return base64.b64encode(data).decode()
 
-img_base64 = get_base64("images/rbg.jpg")
+img_base64 = get_base64("rbg.jpg")
 
 # ---------- HERO SECTION ----------
 st.markdown(f"""
@@ -46,7 +46,7 @@ st.write("\n")
 col1, col2 = st.columns([1, 2])
 
 with col1:
-    st.image("images/photoopo.jpg", width=200)
+    st.image("photoopo.jpg", width=200)
 
 with col2:
     st.header("About Me")
@@ -64,7 +64,8 @@ for skill in skills:
 
 # ---------- PROJECTS ----------
 st.header("Projects")
-st.write("   Currently working...")
+st.subheader("Project no. 1")
+st.write("https://github.com/roshankshah2005-creator/Video-Game-Market-Analysis/tree/main")
 
 # ---------- CONTACT ----------
 st.header("Contact")
