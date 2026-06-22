@@ -4,8 +4,7 @@ import os
 st.set_page_config(page_title="My Portfolio", layout="wide")
 
 # ---------- GLOBAL LUXURY CSS CUSTOMIZATION ----------
-st.markdown("<style>.stApp { background-color: #0b0c10 !important; color: #f5f5f7 !important; } h1, h2, h3, h4 { color: #c5a059 !important; font-weight: 600 !important; } p, span, li, div { color: #cbd5e1 !important; } a { color: #c5a059 !important; text-decoration: none !important; } a:hover { text-decoration: underline !important; }</style>", unsafe_allow_html=True)
-
+st.markdown("<style>.stApp { background-color: #f4f5f6 !important; color: #1a1a1a !important; } h1, h2, h3, h4 { color: #8e7037 !important; font-weight: 600 !important; } p, span, li, div { color: #333333 !important; } a { color: #8e7037 !important; text-decoration: none !important; } a:hover { text-decoration: underline !important; }</style>", unsafe_allow_html=True)
 # ---------- TITLE & HERO SECTION ----------
 st.title("Roshan's Portfolio")
 st.subheader("Chemical Engineering Student | Data Science Enthusiast")
