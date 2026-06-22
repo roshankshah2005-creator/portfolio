@@ -29,7 +29,7 @@ st.markdown("---")
 
 # ---------- SKILLS SECTION ----------
 st.header("Skills")
-st.success("⚡ Python  |  SQL  |  Pandas  |  NumPy  |  Matplotlib")
+st.success("⚡ Python  |  SQL  |  Pandas  |  NumPy  |  Matplotlib | Seaborn")
 
 st.markdown("---")
 
