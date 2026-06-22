@@ -23,7 +23,7 @@ st.markdown("""
     font-family: sans-serif !important;
 }
 
-/* Enhanced Custom Subheader styling */
+/* ✨ SHIFTED TOWARD THE CENTER UNDER THE MAIN HEADER */
 .heavy-subheader {
     color: #f1dfbb !important; /* Warm Metallic Cream */
     font-weight: 800 !important; /* Forced extreme bold */
@@ -31,6 +31,7 @@ st.markdown("""
     margin-top: 0px !important;
     margin-bottom: 35px !important;
     letter-spacing: 0.3px;
+    padding-left: 20px !important; /* Shifts the text cleanly over toward the right-center */
 }
 
 /* Section Headers */
@@ -65,8 +66,7 @@ a:hover {
 </style>
 """, unsafe_allow_html=True)
 
-# ---------- TITLE & HERO SECTION (BYPASS CONTEXT) ----------
-# Removing st.title completely to drop Streamlit's constraints
+# ---------- TITLE & HERO SECTION ----------
 st.markdown('<div class="master-header">Roshan\'s Portfolio</div>', unsafe_allow_html=True)
 st.markdown('<div class="heavy-subheader">Chemical Engineering Student | Data Science Enthusiast</div>', unsafe_allow_html=True)
 
