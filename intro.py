@@ -51,12 +51,12 @@ photo_path = os.path.join(images_dir, "image.jpeg")
 img_base64 = get_base64_safely(background_path)
 
 if img_base64:
-    background_style = f'background-image: linear-gradient(rgba(15, 15, 26, 0.6), rgba(15, 15, 26, 0.8)), url("data:image/jpeg;base64,{img_base64}");'
+    background_style = f"background-image: linear-gradient(rgba(15, 15, 26, 0.6), rgba(15, 15, 26, 0.8)), url('data:image/jpeg;base64,{img_base64}');"
 else:
-    background_style = 'background: linear-gradient(135deg, #1e1b4b, #311042);'
+    background_style = "background: linear-gradient(135deg, #1e1b4b, #311042);"
 
 # ---------- HERO SECTION ----------
-html_hero = f"""
+st.markdown(f"""
 <style>
 .hero {{
     {background_style}
@@ -87,8 +87,8 @@ html_hero = f"""
     <h1>Roshan</h1>
     <h3>Chemical Engineering Student | Data Science Enthusiast</h3>
 </div>
-"""
-st.markdown(html_hero, unsafe_allow_html=True)
+""", unsafe_allow_html=True)
+
 st.write("\n\n")
 
 # ---------- ABOUT ----------
@@ -100,25 +100,4 @@ with col1:
     else:
         st.markdown("""
         <div style="width:200px; height:200px; border-radius:20px; background:#1e1e30; 
-                    display:flex; align-items:center; justify-content:center; color:#6366f1; 
-                    font-size:50px; border: 2px dashed rgba(99, 102, 241, 0.3);">
-            👤
-        </div>
-        """, unsafe_allow_html=True)
-
-with col2:
-    st.header("About Me")
-    st.write("""
-    I am a Chemical Engineering student with strong interest in Data Science, Machine Learning, and Analytics.
-    I enjoy building projects that combine engineering and programming.
-    """)
-
-st.markdown("---")
-
-# ---------- SKILLS (REWRITTEN WITH ROBUST HTML INTERACTIVE GRID) ----------
-st.header("Skills")
-
-st.markdown("""
-<div style="display: flex; flex-wrap: wrap; gap: 15px;">
-    <div style="background-color: #1e1e30; padding: 12px 25px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.05); font-weight: 500; color: #cbd5e1;">Python</div>
-    <div style="background-color: #1e1e30; padding: 12px 25px; border-radius
+                    display:flex; align-items:center; justify-content:
