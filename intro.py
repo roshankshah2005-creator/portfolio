@@ -34,7 +34,10 @@ with col1:
 
 with col2:
     st.header("About Me")
-    st.write("I am a Chemical Engineering student interested in Data Science, Machine Learning, and Analytics.")
+    st.write("I am an engineering student bridging the gap between physical systems and data science.")
+    st.write("My academic core is in Chemical Engineering, where I study complex process mechanics.")
+    st.write("Alongside my coursework, I build machine learning models and data pipelines in Python.")
+    st.write("I aim to apply data-driven optimization to chemical processes and industrial systems.")
 
 st.markdown("---")
 
@@ -67,7 +70,6 @@ st.header("Projects")
 with st.container():
     st.subheader("Project no. 1: Video Game Market Analysis")
     st.write("Data processing and analysis project exploring video game industry sales trends.")
-    # Safe short URL markdown link
     st.markdown("[🔗 GitHub Repository Link](https://github.com/roshankshah2005-creator/Video-Game-Market-Analysis/tree/main)")
 
 st.markdown("---")
