@@ -3,17 +3,15 @@ import os
 
 st.set_page_config(page_title="My Portfolio", layout="wide")
 
-# ---------- GLOBAL CSS CUSTOMIZATION (DARKER IMAGE BACKGROUND) ----------
-# Ultra-dark abstract gradient image with subtle deep purple shadows
-bg_image_url = "https://images.unsplash.com/photo-1614850523459-c2f4c699c52e?q=80&w=1920&auto=format&fit=crop"
+# ----------BACKGROUND SETUP ----------
+bg_image = "https://images.unsplash.com/photo-1542051841857-5f90071e7989?q=80&w=1920&auto=format&fit=crop"
 
 st.markdown(f"""
 <style>
 .stApp {{
-    background-image: url("{bg_image_url}");
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("{bg_image}");
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
     background-attachment: fixed;
     color: #f5f5f7 !important;
 }}
@@ -27,7 +25,7 @@ p, span, li, div {{
 a {{
     color: #50fa7b !important;
     text-decoration: none !important;
-    font-weight: 500;
+    font-weight: 600;
 }}
 a:hover {{
     text-decoration: underline !important;
