@@ -55,7 +55,7 @@ if img_base64:
 else:
     background_style = 'background: linear-gradient(135deg, #1e1b4b, #311042);'
 
-# ---------- HERO SECTION (REWRITTEN TO AVOID PASTE ERRORS) ----------
+# ---------- HERO SECTION ----------
 html_hero = f"""
 <style>
 .hero {{
@@ -88,7 +88,6 @@ html_hero = f"""
     <h3>Chemical Engineering Student | Data Science Enthusiast</h3>
 </div>
 """
-
 st.markdown(html_hero, unsafe_allow_html=True)
 st.write("\n\n")
 
@@ -116,8 +115,10 @@ with col2:
 
 st.markdown("---")
 
-# ---------- SKILLS ----------
+# ---------- SKILLS (REWRITTEN WITH ROBUST HTML INTERACTIVE GRID) ----------
 st.header("Skills")
 
-skills = ["Python", "SQL", "Pandas", "NumPy", "Matplotlib"]
-skill_cols = st.
+st.markdown("""
+<div style="display: flex; flex-wrap: wrap; gap: 15px;">
+    <div style="background-color: #1e1e30; padding: 12px 25px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.05); font-weight: 500; color: #cbd5e1;">Python</div>
+    <div style="background-color: #1e1e30; padding: 12px 25px; border-radius
