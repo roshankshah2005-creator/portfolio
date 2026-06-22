@@ -5,22 +5,37 @@ import os
 st.set_page_config(page_title="My Portfolio", layout="wide")
 
 # ---------- FUNCTION TO ENCODE IMAGE ----------
-def get_base64(file):
-    with open(file, "rb") as f:
+def get_base64(filename):
+    # 1. Check the portfolio folder dynamically
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    path_in_subfolder = os.path.join(current_dir, filename)
+    
+    # 2. Check the main root folder as a backup
+    path_in_root = os.path.abspath(filename)
+    
+    # Decide which file exists
+    if os.path.exists(path_in_subfolder):
+        final_path = path_in_subfolder
+    elif os.path.exists(path_in_root):
+        final_path = path_in_root
+    else:
+        # If the file is completely missing from both places, don't crash!
+        # Return a clean placeholder background color instead
+        return "background: linear-gradient(135deg, #1e1e2f, #252545);"
+
+    with open(final_path, "rb") as f:
         data = f.read()
-    return base64.b64encode(data).decode()
+    encoded = base64.b64encode(data).decode()
+    return f'background-image: url("data:image/jpg;base64,{encoded}");'
 
-# Using os.path to make sure Streamlit finds them in the portfolio subfolder
-current_dir = os.path.dirname(os.path.abspath(__file__))
-image_path = os.path.join(current_dir, "oip.jpg")  # <-- Updated to your new filename
-
-img_base64 = get_base64(image_path)
+# This function now safely returns the entire background CSS rule or a gradient fallback
+background_style = get_base64("oip.jpg")
 
 # ---------- HERO SECTION ----------
 st.markdown(f"""
 <style>
 .hero {{
-    background-image: url("data:image/jpg;base64,{img_base64}");
+    {background_style}
     background-size: cover;
     background-position: center;
     padding: 120px 40px;
@@ -51,9 +66,17 @@ st.write("\n")
 col1, col2 = st.columns([1, 2])
 
 with col1:
-    # Looks for your profile photo named 'image.jpg'
-    photo_path = os.path.join(current_dir, "image.jpg")
-    st.image(photo_path, width=200)
+    # Applying the same dual-folder safety logic to your profile image
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    path_sub = os.path.join(current_dir, "image.jpg")
+    path_root = os.path.abspath("image.jpg")
+    
+    if os.path.exists(path_sub):
+        st.image(path_sub, width=200)
+    elif os.path.exists(path_root):
+        st.image(path_root, width=200)
+    else:
+        st.warning("👤 Profile image (image.jpg) not found in any folder.")
 
 with col2:
     st.header("About Me")
