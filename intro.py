@@ -11,7 +11,7 @@ st.markdown("""
     color: #f5f5f7 !important; 
 } 
 
-/* 💥 CUSTOM GLOBAL BYPASS FOR MASSSIVE PORTFOLIO HEADER */
+/* CUSTOM GLOBAL BYPASS FOR MASSSIVE PORTFOLIO HEADER */
 .master-header {
     color: #dfba73 !important; /* Premium Champagne Gold */
     font-weight: 900 !important; /* Maximum possible thickness */
@@ -23,7 +23,7 @@ st.markdown("""
     font-family: sans-serif !important;
 }
 
-/* ✨ SHIFTED TOWARD THE CENTER UNDER THE MAIN HEADER */
+/* SHIFTED TOWARD THE CENTER UNDER THE MAIN HEADER */
 .heavy-subheader {
     color: #f1dfbb !important; /* Warm Metallic Cream */
     font-weight: 800 !important; /* Forced extreme bold */
@@ -31,7 +31,7 @@ st.markdown("""
     margin-top: 0px !important;
     margin-bottom: 35px !important;
     letter-spacing: 0.3px;
-    padding-left: 20px !important; /* Shifts the text cleanly over toward the right-center */
+    padding-left: 20px !important;
 }
 
 /* Section Headers */
@@ -87,6 +87,25 @@ with col1:
 with col2:
     st.header("About Me")
     st.write("I am a Chemical Engineering student with strong interest in Data Science, Machine Learning, and Analytics. I enjoy building projects that combine engineering and programming.")
+
+st.markdown("---")
+
+# ---------- ACADEMIC PROFILE & 3RD SEMESTER FOCUS ----------
+st.header("Education & Core Focus")
+col3, col4 = st.columns(2)
+
+with col3:
+    st.subheader("🎓 Academic Background")
+    st.write("• **Degree:** B.Tech in Chemical Engineering")
+    st.write("• **Institution:** National Institute of Technology (NIT)")
+    st.write("• **Interests:** Process Simulation, Optimization, and Data-Driven Modeling")
+
+with col4:
+    st.subheader("🧪 3rd Semester Core Core Engineering Modules")
+    st.write("• **Chemical Process Calculations:** Material and energy balances for complex systems.")
+    st.write("• **Fluid Mechanics:** Behavior of fluids, piping networks, and transport phenomena.")
+    st.write("• **Chemical Engineering Thermodynamics:** Phase equilibrium and energy conversion laws.")
+    st.write("• **Advanced Mathematics:** Numerical methods, linear algebra, and differential equations.")
 
 st.markdown("---")
 
