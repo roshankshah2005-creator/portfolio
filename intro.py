@@ -4,27 +4,42 @@ import os
 
 st.set_page_config(page_title="My Portfolio", layout="wide")
 
-# ---------- FUNCTION TO ENCODE IMAGE ----------
-def get_base64(file_path):
-    with open(file_path, "rb") as f:
-        data = f.read()
-    return base64.b64encode(data).decode()
+# ---------- PERMANENTLY SAFE ENCODING FUNCTION ----------
+def get_base64_safely(file_path):
+    """
+    Attempts to read a file in binary mode. If it fails for any reason
+    (missing file, wrong extension, capitalization change), it returns None
+    instead of crashing the entire Streamlit application.
+    """
+    try:
+        if os.path.exists(file_path):
+            with open(file_path, "rb") as f:
+                data = f.read()
+            return base64.b64encode(data).decode()
+    except Exception:
+        pass
+    return None
 
-# Point directly to your 'images' folder at the root
+# Point directly to your images directory
 images_dir = "./images"
+background_path = os.path.join(images_dir, "OIP.jpg")
+photo_path = os.path.join(images_dir, "image.jpeg")
 
-# Target your exact filenames and extensions perfectly
-background_path = os.path.join(images_dir, "OIP.jpg")      # Matches your background exactly
-photo_path = os.path.join(images_dir, "image.jpeg")       # Fixed extension from .jpg to .jpeg
+# Safely attempt to encode the background image
+img_base64 = get_base64_safely(background_path)
 
-# Encode the background image
-img_base64 = get_base64(background_path)
+# Determine background style based on whether the image loaded successfully
+if img_base64:
+    background_style = f'background-image: url("data:image/jpeg;base64,{img_base64}");'
+else:
+    # Safe permanent fallback: A sleek modern gradient if OIP.jpg fails
+    background_style = 'background: linear-gradient(135deg, #1e1e2f, #252545);'
 
 # ---------- HERO SECTION ----------
 st.markdown(f"""
 <style>
 .hero {{
-    background-image: url("data:image/jpg;base64,{img_base64}");
+    {background_style}
     background-size: cover;
     background-position: center;
     padding: 120px 40px;
@@ -55,8 +70,17 @@ st.write("\n")
 col1, col2 = st.columns([1, 2])
 
 with col1:
-    # Load your profile photo seamlessly
-    st.image(photo_path, width=200)
+    # Safely display the profile photo if it exists
+    if os.path.exists(photo_path):
+        st.image(photo_path, width=200)
+    else:
+        # Safe fallback layout if image.jpeg is missing or renamed
+        st.markdown("""
+        <div style="width:200px; height:200px; border-radius:10px; background:#2b2b40; 
+                    display:flex; align-items:center; justify-content:center; color:gray; font-size:40px;">
+            👤
+        </div>
+        """, unsafe_allow_html=True)
 
 with col2:
     st.header("About Me")
