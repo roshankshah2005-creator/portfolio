@@ -3,8 +3,37 @@ import os
 
 st.set_page_config(page_title="My Portfolio", layout="wide")
 
-# ---------- GLOBAL LUXURY CSS CUSTOMIZATION (PURPLE & MINT GREEN) ----------
-st.markdown("<style>.stApp { background-color: #1a102f !important; color: #f5f5f7 !important; } h1, h2, h3, h4 { color: #50fa7b !important; font-weight: 600 !important; } p, span, li, div { color: #f5f5f7 !important; } a { color: #50fa7b !important; text-decoration: none !important; font-weight: 500; } a:hover { text-decoration: underline !important; }</style>", unsafe_allow_html=True)
+# ---------- GLOBAL CSS CUSTOMIZATION (IMAGE BACKGROUND) ----------
+# Using a high-end, dark purple abstract digital art image from Unsplash
+bg_image_url = "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1920&auto=format&fit=crop"
+
+st.markdown(f"""
+<style>
+.stApp {{
+    background-image: url("{bg_image_url}");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #f5f5f7 !important;
+}}
+h1, h2, h3, h4 {{
+    color: #50fa7b !important;
+    font-weight: 600 !important;
+}}
+p, span, li, div {{
+    color: #f5f5f7 !important;
+}}
+a {{
+    color: #50fa7b !important;
+    text-decoration: none !important;
+    font-weight: 500;
+}}
+a:hover {{
+    text-decoration: underline !important;
+}}
+</style>
+""", unsafe_allow_html=True)
 
 # ---------- TITLE & HERO SECTION ----------
 st.title("Roshan's Portfolio")
@@ -45,9 +74,6 @@ with st.container():
 
 st.markdown("---")
 
-# ---------- CONTACT SECTION ----------
-st.header("Contact Me")
-st.text("📧 Email: roshank.shah2005@gmail.com")
 # ---------- CONTACT SECTION ----------
 st.header("Contact Me")
 st.markdown("📧 **Email:** roshank.shah2005@gmail.com")
