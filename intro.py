@@ -13,9 +13,9 @@ def get_base64(file_path):
 # Point directly to your 'images' folder at the root
 images_dir = "./images"
 
-# Target your exact file names and extensions case-sensitively
-background_path = os.path.join(images_dir, "OIP.jpg")  # Capitalized 'OIP'
-photo_path = os.path.join(images_dir, "image.jpg")     # Lowercase 'image'
+# Target your exact filenames and extensions perfectly
+background_path = os.path.join(images_dir, "OIP.jpg")      # Matches your background exactly
+photo_path = os.path.join(images_dir, "image.jpeg")       # Fixed extension from .jpg to .jpeg
 
 # Encode the background image
 img_base64 = get_base64(background_path)
@@ -55,7 +55,7 @@ st.write("\n")
 col1, col2 = st.columns([1, 2])
 
 with col1:
-    # Load your profile photo from the images folder
+    # Load your profile photo seamlessly
     st.image(photo_path, width=200)
 
 with col2:
