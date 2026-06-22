@@ -1,27 +1,37 @@
 import streamlit as st
 import base64
-import os  # <-- Added for path handling
+import os
 
 st.set_page_config(page_title="My Portfolio", layout="wide")
 
 # ---------- FUNCTION TO ENCODE IMAGE ----------
 def get_base64(file):
-    with open(file, "rb") as f:
-        data = f.read()
-    return base64.b64encode(data).decode()
+    # Safely check if the file actually exists before trying to open it
+    if os.path.exists(file):
+        with open(file, "rb") as f:
+            data = f.read()
+        return base64.b64encode(data).decode()
+    return None  # Return None if the file is missing
 
 # Dynamically locate the directory where intro.py is stored
 current_dir = os.path.dirname(os.path.abspath(__file__))
 image_path = os.path.join(current_dir, "rbg.jpg")
 
-# Pass the safe dynamic path to your function
+# Pass the path to your safe function
 img_base64 = get_base64(image_path)
+
+# Determine background style based on whether the image was successfully loaded
+if img_base64:
+    background_style = f'background-image: url("data:image/jpg;base64,{img_base64}");'
+else:
+    # Fallback to a sleek dark gradient if rbg.jpg cannot be found
+    background_style = 'background: linear-gradient(135deg, #1e1e2f, #252545);'
 
 # ---------- HERO SECTION ----------
 st.markdown(f"""
 <style>
 .hero {{
-    background-image: url("data:image/jpg;base64,{img_base64}");
+    {background_style}
     background-size: cover;
     background-position: center;
     padding: 120px 40px;
@@ -32,7 +42,7 @@ st.markdown(f"""
 .hero h1 {{
     font-size: 50px;
     margin-bottom: 10px;
-    color: #f5f5f5; /* Fixed double hash typo here */
+    color: #f5f5f5;
 }}
 .hero h3 {{
     font-size: 22px;
@@ -52,9 +62,12 @@ st.write("\n")
 col1, col2 = st.columns([1, 2])
 
 with col1:
-    # Applying the same safe path logic for your profile photo if it lives in the same folder
     photo_path = os.path.join(current_dir, "photoopo.jpg")
-    st.image(photo_path, width=200)
+    if os.path.exists(photo_path):
+        st.image(photo_path, width=200)
+    else:
+        # Fallback placeholder if your profile photo is missing too
+        st.warning("👤 Profile image not found on GitHub folder.")
 
 with col2:
     st.header("About Me")
