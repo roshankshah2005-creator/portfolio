@@ -3,8 +3,46 @@ import os
 
 st.set_page_config(page_title="My Portfolio", layout="wide")
 
-# ---------- GLOBAL LUXURY CSS CUSTOMIZATION (PURPLE & MINT GREEN) ----------
-st.markdown("<style>.stApp { background-color: #1a102f !important; color: #f5f5f7 !important; } h1, h2, h3, h4 { color: #50fa7b !important; font-weight: 600 !important; } p, span, li, div { color: #f5f5f7 !important; } a { color: #50fa7b !important; text-decoration: none !important; font-weight: 500; } a:hover { text-decoration: underline !important; }</style>", unsafe_allow_html=True)
+# ---------- GLOBAL PREMIUM LUXURY CSS CUSTOMIZATION ----------
+st.markdown("""
+<style>
+.stApp { 
+    background-color: #1a102f !important; 
+    color: #f5f5f7 !important; 
+} 
+/* Main Page Title */
+h1 {
+    color: #dfba73 !important; /* Premium Champagne Gold */
+    font-weight: 800 !important;
+    letter-spacing: 0.5px;
+}
+/* Section Headers */
+h2 { 
+    color: #e5c78d !important; /* Soft Satin Gold */
+    font-weight: 700 !important; 
+} 
+/* Subheaders and Project Titles */
+h3, h4 { 
+    color: #f1dfbb !important; /* Warm Metallic Cream */
+    font-weight: 600 !important; 
+} 
+/* Standard Body Text */
+p, span, li, div { 
+    color: #f5f5f7 !important; 
+    font-size: 16px;
+} 
+/* Active Interactive Links */
+a { 
+    color: #dfba73 !important; 
+    text-decoration: none !important; 
+    font-weight: 600; 
+} 
+a:hover { 
+    text-decoration: underline !important; 
+    color: #f1dfbb !important;
+}
+</style>
+""", unsafe_allow_html=True)
 
 # ---------- TITLE & HERO SECTION ----------
 st.title("Roshan's Portfolio")
@@ -41,12 +79,12 @@ st.header("Projects")
 with st.container():
     st.subheader("Project no. 1: Video Game Market Analysis")
     st.write("An end-to-end data processing and analysis project exploring historical video game industry sales trends.")
-    st.write("🔗 GitHub Link: https://github.com/roshankshah2005-creator/Video-Game-Market-Analysis/tree/main")
+    st.markdown("🔗 **GitHub Link:** [Video Game Market Analysis](https://github.com/roshankshah2005-creator/Video-Game-Market-Analysis/tree/main)")
 
 st.markdown("---")
 
 # ---------- CONTACT SECTION ----------
 st.header("Contact Me")
 st.markdown("📧 **Email:** roshank.shah2005@gmail.com")
-st.markdown("💼 **LinkedIn:** https://www.linkedin.com/in/roshan-kumar-sah-5158653a5")
-st.markdown("🐙 **GitHub:** https://github.com/roshankshah2005-creator")
+st.markdown("💼 **LinkedIn:** [roshan-kumar-sah-5158653a5](https://www.linkedin.com/in/roshan-kumar-sah-5158653a5)")
+st.markdown("🐙 **GitHub:** [roshankshah2005-creator](https://github.com/roshankshah2005-creator)")
