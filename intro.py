@@ -3,7 +3,7 @@ import os
 
 st.set_page_config(page_title="My Portfolio", layout="wide")
 
-# ---------- FORCE MAX LEVEL TITLE CSS CUSTOMIZATION ----------
+# ---------- FORCED LUXURY SYSTEM CSS CUSTOMIZATION ----------
 st.markdown("""
 <style>
 .stApp { 
@@ -11,19 +11,16 @@ st.markdown("""
     color: #f5f5f7 !important; 
 } 
 
-/* 💥 TARGETING STREAMLIT'S EXACT INTERNAL TITLE WRAPPER FOR IMMENSE SIZE */
-[data-testid="stHeaderBlock"] h1,
-.main .element-container h1,
-.stApp h1, 
-h1 {
+/* 💥 CUSTOM GLOBAL BYPASS FOR MASSSIVE PORTFOLIO HEADER */
+.master-header {
     color: #dfba73 !important; /* Premium Champagne Gold */
     font-weight: 900 !important; /* Maximum possible thickness */
-    font-size: 75px !important; /* Absolute massive size overwrite */
+    font-size: 80px !important; /* Massive display scale */
     line-height: 1.1 !important;
-    letter-spacing: -1.5px !important;
-    margin-top: 5px !important;
+    letter-spacing: -2px !important;
+    margin-top: 20px !important;
     margin-bottom: 5px !important;
-    display: block !important;
+    font-family: sans-serif !important;
 }
 
 /* Enhanced Custom Subheader styling */
@@ -34,7 +31,6 @@ h1 {
     margin-top: 0px !important;
     margin-bottom: 35px !important;
     letter-spacing: 0.3px;
-    display: block !important;
 }
 
 /* Section Headers */
@@ -69,9 +65,10 @@ a:hover {
 </style>
 """, unsafe_allow_html=True)
 
-# ---------- TITLE & HERO SECTION ----------
-st.title("Roshan's Portfolio")
-st.markdown('<p class="heavy-subheader">Chemical Engineering Student | Data Science Enthusiast</p>', unsafe_allow_html=True)
+# ---------- TITLE & HERO SECTION (BYPASS CONTEXT) ----------
+# Removing st.title completely to drop Streamlit's constraints
+st.markdown('<div class="master-header">Roshan\'s Portfolio</div>', unsafe_allow_html=True)
+st.markdown('<div class="heavy-subheader">Chemical Engineering Student | Data Science Enthusiast</div>', unsafe_allow_html=True)
 
 st.markdown("---")
 
