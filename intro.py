@@ -89,12 +89,12 @@ st.header("Projects")
 with st.container():
     st.subheader("Project no. 1: Video Game Market Analysis")
     st.write("An end-to-end data processing and analysis project exploring historical video game industry sales trends.")
-    st.markdown("🔗 **GitHub Link:** [Video Game Market Analysis](https://github.com/roshankshah2005-creator/Video-Game-Market-Analysis/tree/main)")
+    st.markdown("""🔗 **GitHub Link:** [Video Game Market Analysis](https://github.com/roshankshah2005-creator/Video-Game-Market-Analysis/tree/main)""")
 
 st.markdown("---")
 
 # ---------- CONTACT SECTION ----------
 st.header("Contact Me")
-st.markdown("📧 **Email:** roshank.shah2005@gmail.com")
-st.markdown("💼 **LinkedIn:** [roshan-kumar-sah-5158653a5](https://www.linkedin.com/in/roshan-kumar-sah-5158653a5)")
-st.markdown("🐙 **GitHub:** [roshankshah2005-creator](https://github.
+st.markdown("""📧 **Email:** roshank.shah2005@gmail.com""")
+st.markdown("""💼 **LinkedIn:** [roshan-kumar-sah-5158653a5](https://www.linkedin.com/in/roshan-kumar-sah-5158653a5)""")
+st.markdown("""🐙 **GitHub:** [roshankshah2005-creator](https://github.com/roshankshah2005-creator)""")
