@@ -60,7 +60,7 @@ def get_base64_safely(file_path):
 
 # Point directly to your images directory
 images_dir = "./images"
-background_path = os.path.join(images_dir, "OIP.jpg") # Keeps your exact file matching setup
+background_path = os.path.join(images_dir, "OIP.jpg") 
 photo_path = os.path.join(images_dir, "image.jpeg")
 
 # Safely attempt to encode the background image
@@ -73,6 +73,7 @@ else:
     # Upgraded fallback: A premium neon purple/indigo space gradient
     background_style = 'background: linear-gradient(135deg, #1e1b4b, #311042);'
 
+
 # ---------- HERO SECTION ----------
 st.markdown(f"""
 <style>
@@ -84,8 +85,8 @@ st.markdown(f"""
     border-radius: 20px;
     text-align: center;
     color: white;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Soft drop shadow for depth */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     border: 1px solid rgba(255, 255, 255, 0.05);
 }}
 .hero h1 {{
-    font-size
+    font-size: 55px !
