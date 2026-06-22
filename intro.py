@@ -56,7 +56,6 @@ a:hover {
 
 # ---------- TITLE & HERO SECTION ----------
 st.title("Roshan's Portfolio")
-# Using a custom HTML container to completely force the maximum thickness on the subtitle
 st.markdown('<p class="heavy-subheader">Chemical Engineering Student | Data Science Enthusiast</p>', unsafe_allow_html=True)
 
 st.markdown("---")
@@ -90,4 +89,12 @@ st.header("Projects")
 with st.container():
     st.subheader("Project no. 1: Video Game Market Analysis")
     st.write("An end-to-end data processing and analysis project exploring historical video game industry sales trends.")
-    st.markdown("🔗 **GitHub Link:** [Video Game Market Analysis](
+    st.markdown("🔗 **GitHub Link:** [Video Game Market Analysis](https://github.com/roshankshah2005-creator/Video-Game-Market-Analysis/tree/main)")
+
+st.markdown("---")
+
+# ---------- CONTACT SECTION ----------
+st.header("Contact Me")
+st.markdown("📧 **Email:** roshank.shah2005@gmail.com")
+st.markdown("💼 **LinkedIn:** [roshan-kumar-sah-5158653a5](https://www.linkedin.com/in/roshan-kumar-sah-5158653a5)")
+st.markdown("🐙 **GitHub:** [roshankshah2005-creator](https://github.
