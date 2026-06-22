@@ -78,33 +78,4 @@ st.markdown("---")
 col1, col2 = st.columns([1, 2.5])
 
 images_dir = "./images"
-photo_path = os.path.join(images_dir, "image.jpeg")
-
-with col1:
-    if os.path.exists(photo_path):
-        st.image(photo_path, width=200)
-    else:
-        st.write("👤 [Profile Image Container Ready]")
-
-with col2:
-    st.header("About Me")
-    st.write("I am a Chemical Engineering student with strong interest in Data Science, Machine Learning, and Analytics. I enjoy building projects that combine engineering and programming.")
-
-st.markdown("---")
-
-# ---------- ACADEMIC PROFILE & 3RD SEMESTER FOCUS ----------
-st.header("Education & Core Focus")
-col3, col4 = st.columns(2)
-
-with col3:
-    st.subheader("🎓 Academic Background")
-    st.write("• **Degree:** B.Tech in Chemical Engineering")
-    st.write("• **Institution:** National Institute of Technology (NIT)")
-    st.write("• **Interests:** Process Simulation, Optimization, and Data-Driven Modeling")
-
-with col4:
-    st.subheader("🧪 3rd Semester Core Engineering Modules")
-    st.write("• **Chemical Process Calculations:** Material and energy balances for complex systems.")
-    st.write("• **Fluid Mechanics:** Behavior of fluids, piping networks, and transport phenomena.")
-    st.write("• **Chemical Engineering Thermodynamics:** Phase equilibrium and energy conversion laws.")
-    st.write("• **Advanced Mathematics:** Numerical methods, linear algebra, and differential
+photo_path = os.path.join(images_dir, "image.
