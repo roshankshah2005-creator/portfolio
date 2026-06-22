@@ -7,48 +7,34 @@ st.set_page_config(page_title="My Portfolio", layout="wide")
 # ---------- GLOBAL CSS CUSTOMIZATION ----------
 st.markdown("""
 <style>
-    /* 1. Global Background & Font Styling */
     .stApp {
         background-color: #0f0f1a;
         color: #e2e8f0;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
-    
-    /* 2. Styling Headings (About Me, Skills, Projects, Contact) */
     h1, h2, h3, h4 {
-        color: #6366f1 !important; /* Beautiful Indigo Neon Color */
+        color: #6366f1 !important;
         font-weight: 600 !important;
         letter-spacing: 0.5px;
     }
-    
-    /* 3. Global Styling for Standard Text */
     p, span, li {
-        color: #cbd5e1 !important; /* Soft white/gray for better readability */
+        color: #cbd5e1 !important;
         font-size: 16px;
     }
-    
-    /* 4. Link Button Customization */
     a {
-        color: #38bdf8 !important; /* Electric Blue for Links */
+        color: #38bdf8 !important;
         text-decoration: none !important;
         font-weight: 500;
-        transition: color 0.2s ease-in-out;
     }
     a:hover {
-        color: #6366f1 !important; /* Changes to Indigo on Hover */
+        color: #6366f1 !important;
         text-decoration: underline !important;
     }
 </style>
 """, unsafe_allow_html=True)
 
-
 # ---------- PERMANENTLY SAFE ENCODING FUNCTION ----------
 def get_base64_safely(file_path):
-    """
-    Attempts to read a file in binary mode. If it fails for any reason
-    (missing file, wrong extension, capitalization change), it returns None
-    instead of crashing the entire Streamlit application.
-    """
     try:
         if os.path.exists(file_path):
             with open(file_path, "rb") as f:
@@ -58,24 +44,19 @@ def get_base64_safely(file_path):
         pass
     return None
 
-# Point directly to your images directory
 images_dir = "./images"
 background_path = os.path.join(images_dir, "OIP.jpg") 
 photo_path = os.path.join(images_dir, "image.jpeg")
 
-# Safely attempt to encode the background image
 img_base64 = get_base64_safely(background_path)
 
-# Determine background style based on whether the image loaded successfully
 if img_base64:
     background_style = f'background-image: linear-gradient(rgba(15, 15, 26, 0.6), rgba(15, 15, 26, 0.8)), url("data:image/jpeg;base64,{img_base64}");'
 else:
-    # Upgraded fallback: A premium neon purple/indigo space gradient
     background_style = 'background: linear-gradient(135deg, #1e1b4b, #311042);'
 
-
-# ---------- HERO SECTION ----------
-st.markdown(f"""
+# ---------- HERO SECTION (REWRITTEN TO AVOID PASTE ERRORS) ----------
+html_hero = f"""
 <style>
 .hero {{
     {background_style}
@@ -89,4 +70,54 @@ st.markdown(f"""
     border: 1px solid rgba(255, 255, 255, 0.05);
 }}
 .hero h1 {{
-    font-size: 55px !
+    font-size: 55px !important;
+    margin-bottom: 12px;
+    color: #ffffff !important;
+    font-weight: 800 !important;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.6);
+}}
+.hero h3 {{
+    font-size: 24px !important;
+    font-weight: 300 !important;
+    color: #cbd5e1 !important;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+}}
+</style>
+<div class="hero">
+    <h1>Roshan</h1>
+    <h3>Chemical Engineering Student | Data Science Enthusiast</h3>
+</div>
+"""
+
+st.markdown(html_hero, unsafe_allow_html=True)
+st.write("\n\n")
+
+# ---------- ABOUT ----------
+col1, col2 = st.columns([1, 2.5])
+
+with col1:
+    if os.path.exists(photo_path):
+        st.image(photo_path, width=200)
+    else:
+        st.markdown("""
+        <div style="width:200px; height:200px; border-radius:20px; background:#1e1e30; 
+                    display:flex; align-items:center; justify-content:center; color:#6366f1; 
+                    font-size:50px; border: 2px dashed rgba(99, 102, 241, 0.3);">
+            👤
+        </div>
+        """, unsafe_allow_html=True)
+
+with col2:
+    st.header("About Me")
+    st.write("""
+    I am a Chemical Engineering student with strong interest in Data Science, Machine Learning, and Analytics.
+    I enjoy building projects that combine engineering and programming.
+    """)
+
+st.markdown("---")
+
+# ---------- SKILLS ----------
+st.header("Skills")
+
+skills = ["Python", "SQL", "Pandas", "NumPy", "Matplotlib"]
+skill_cols = st.
