@@ -48,5 +48,8 @@ st.markdown("---")
 # ---------- CONTACT SECTION ----------
 st.header("Contact Me")
 st.text("📧 Email: roshank.shah2005@gmail.com")
-st.text("💼 LinkedIn: https://www.linkedin.com/in/roshan-kumar-sah-5158653a5")
-st.text("🐙 GitHub: https://github.com/roshankshah2005-creator")
+# ---------- CONTACT SECTION ----------
+st.header("Contact Me")
+st.markdown("📧 **Email:** roshank.shah2005@gmail.com")
+st.markdown("💼 **LinkedIn:** https://www.linkedin.com/in/roshan-kumar-sah-5158653a5")
+st.markdown("🐙 **GitHub:** https://github.com/roshankshah2005-creator")
