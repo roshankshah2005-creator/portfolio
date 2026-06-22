@@ -4,6 +4,44 @@ import os
 
 st.set_page_config(page_title="My Portfolio", layout="wide")
 
+# ---------- GLOBAL CSS CUSTOMIZATION ----------
+st.markdown("""
+<style>
+    /* 1. Global Background & Font Styling */
+    .stApp {
+        background-color: #0f0f1a;
+        color: #e2e8f0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    
+    /* 2. Styling Headings (About Me, Skills, Projects, Contact) */
+    h1, h2, h3, h4 {
+        color: #6366f1 !important; /* Beautiful Indigo Neon Color */
+        font-weight: 600 !important;
+        letter-spacing: 0.5px;
+    }
+    
+    /* 3. Global Styling for Standard Text */
+    p, span, li {
+        color: #cbd5e1 !important; /* Soft white/gray for better readability */
+        font-size: 16px;
+    }
+    
+    /* 4. Link Button Customization */
+    a {
+        color: #38bdf8 !important; /* Electric Blue for Links */
+        text-decoration: none !important;
+        font-weight: 500;
+        transition: color 0.2s ease-in-out;
+    }
+    a:hover {
+        color: #6366f1 !important; /* Changes to Indigo on Hover */
+        text-decoration: underline !important;
+    }
+</style>
+""", unsafe_allow_html=True)
+
+
 # ---------- PERMANENTLY SAFE ENCODING FUNCTION ----------
 def get_base64_safely(file_path):
     """
@@ -22,7 +60,7 @@ def get_base64_safely(file_path):
 
 # Point directly to your images directory
 images_dir = "./images"
-background_path = os.path.join(images_dir, "rbg.jpg")
+background_path = os.path.join(images_dir, "OIP.jpg") # Keeps your exact file matching setup
 photo_path = os.path.join(images_dir, "image.jpeg")
 
 # Safely attempt to encode the background image
@@ -30,10 +68,10 @@ img_base64 = get_base64_safely(background_path)
 
 # Determine background style based on whether the image loaded successfully
 if img_base64:
-    background_style = f'background-image: url("data:image/jpeg;base64,{img_base64}");'
+    background_style = f'background-image: linear-gradient(rgba(15, 15, 26, 0.6), rgba(15, 15, 26, 0.8)), url("data:image/jpeg;base64,{img_base64}");'
 else:
-    # Safe permanent fallback: A sleek modern gradient if OIP.jpg fails
-    background_style = 'background: linear-gradient(135deg, #1e1e2f, #252545);'
+    # Upgraded fallback: A premium neon purple/indigo space gradient
+    background_style = 'background: linear-gradient(135deg, #1e1b4b, #311042);'
 
 # ---------- HERO SECTION ----------
 st.markdown(f"""
@@ -42,68 +80,12 @@ st.markdown(f"""
     {background_style}
     background-size: cover;
     background-position: center;
-    padding: 120px 40px;
-    border-radius: 15px;
+    padding: 140px 40px;
+    border-radius: 20px;
     text-align: center;
     color: white;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Soft drop shadow for depth */
+    border: 1px solid rgba(255, 255, 255, 0.05);
 }}
 .hero h1 {{
-    font-size: 50px;
-    margin-bottom: 10px;
-    color: #f5f5f5;
-}}
-.hero h3 {{
-    font-size: 22px;
-    font-weight: 300;
-}}
-</style>
-
-<div class="hero">
-    <h1>Roshan</h1>
-    <h3>Chemical Engineering Student | Data Science Enthusiast</h3>
-</div>
-""", unsafe_allow_html=True)
-
-st.write("\n")
-
-# ---------- ABOUT ----------
-col1, col2 = st.columns([1, 2])
-
-with col1:
-    # Safely display the profile photo if it exists
-    if os.path.exists(photo_path):
-        st.image(photo_path, width=200)
-    else:
-        # Safe fallback layout if image.jpeg is missing or renamed
-        st.markdown("""
-        <div style="width:200px; height:200px; border-radius:10px; background:#2b2b40; 
-                    display:flex; align-items:center; justify-content:center; color:gray; font-size:40px;">
-            👤
-        </div>
-        """, unsafe_allow_html=True)
-
-with col2:
-    st.header("About Me")
-    st.write("""
-    I am a Chemical Engineering student with strong interest in Data Science, Machine Learning, and Analytics.
-    I enjoy building projects that combine engineering and programming.
-    """)
-
-# ---------- SKILLS ----------
-st.header("Skills")
-
-skills = ["Python", "SQL", "Pandas", "NumPy", "Matplotlib"]
-for skill in skills:
-    st.write("•", skill)
-
-# ---------- PROJECTS ----------
-st.header("Projects")
-st.subheader("Project no. 1")
-st.write("https://github.com/roshankshah2005-creator/Video-Game-Market-Analysis/tree/main")
-
-# ---------- CONTACT ----------
-st.header("Contact")
-
-st.write("Email: roshank.shah2005@gmail.com")
-st.write("LinkedIn: https://www.linkedin.com/in/roshan-kumar-sah-5158653a5")
-st.write("GitHub: https://github.com/roshankshah2005-creator")
+    font-size
