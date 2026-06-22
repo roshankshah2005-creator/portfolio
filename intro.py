@@ -3,7 +3,7 @@ import os
 
 st.set_page_config(page_title="My Portfolio", layout="wide")
 
-# ---------- FORCED LUXURY SYSTEM CSS CUSTOMIZATION ----------
+# ---------- ----------
 st.markdown("""
 <style>
 .stApp { 
@@ -48,10 +48,10 @@ h3, h4 {
     font-size: 24px !important;
 } 
 
-/* 💥 ENHANCED BODY TEXT SIZE (LOCKED TO 20px WITH OPTIMIZED LINE HEIGHT) */
+/* ENHANCED BODY TEXT SIZE (LOCKED TO 20px WITH OPTIMIZED LINE HEIGHT) */
 p, span, li, div { 
     color: #f5f5f7 !important; 
-    font-size: 20px !important; /* Upgraded to 20px */
+    font-size: 20px !important; 
     line-height: 1.6 !important; 
 } 
 
@@ -122,4 +122,11 @@ st.header("Projects")
 with st.container():
     st.subheader("Project no. 1: Video Game Market Analysis")
     st.write("An end-to-end data processing and analysis project exploring historical video game industry sales trends.")
-    st.markdown("""🔗 **GitHub Link:** [Video Game Market Analysis](
+    st.markdown("🔗 **GitHub Link:** [Video Game Market Analysis](https://github.com/roshankshah2005-creator/Video-Game-Market-Analysis/tree/main)")
+
+st.markdown("---")
+
+# ---------- CONTACT SECTION ----------
+st.header("Contact Me")
+st.markdown("📧 **Email:** roshank.shah2005@gmail.com")
+st.markdown("💼 **LinkedIn:** [roshan-kumar-sah-5158653a5](
