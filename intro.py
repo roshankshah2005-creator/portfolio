@@ -10,26 +10,31 @@ st.markdown("""
     background-color: #1a102f !important; 
     color: #f5f5f7 !important; 
 } 
-/* Main Page Title - MAX ULTRA BOLD */
+/* Main Page Title - COOMPLETELY MAXIMIZED AS A MASTER HEADER */
 h1 {
     color: #dfba73 !important; /* Premium Champagne Gold */
-    font-weight: 900 !important; /* Maximum thickness */
-    font-size: 3.2rem !important; /* Increased size */
-    letter-spacing: 0.5px;
-    margin-bottom: 5px !important;
+    font-weight: 900 !important; /* Maximum possible thickness */
+    font-size: clamp(3.5rem, 6vw, 5rem) !important; /* Ultra bold responsive sizing */
+    line-height: 1.1 !important;
+    letter-spacing: -1px !important; /* Premium tight editorial tracking */
+    margin-top: 10px !important;
+    margin-bottom: 10px !important;
+    text-shadow: 3px 3px 15px rgba(0, 0, 0, 0.6) !important; /* Soft backdrop pop */
 }
 /* Enhanced Custom Subheader styling */
 .heavy-subheader {
     color: #f1dfbb !important; /* Warm Metallic Cream */
     font-weight: 800 !important; /* Forced extreme bold */
-    font-size: 1.6rem !important; /* Increased size */
+    font-size: clamp(1.4rem, 2.5vw, 1.9rem) !important; /* Responsive subheader */
     margin-top: 0px !important;
-    margin-bottom: 25px !important;
+    margin-bottom: 35px !important;
+    letter-spacing: 0.3px;
 }
 /* Section Headers */
 h2 { 
     color: #e5c78d !important; /* Soft Satin Gold */
     font-weight: 800 !important; 
+    font-size: 2rem !important;
 } 
 /* Project Titles */
 h3, h4 { 
