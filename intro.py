@@ -62,7 +62,7 @@ st.write("\n")
 col1, col2 = st.columns([1, 2])
 
 with col1:
-    photo_path = os.path.join(current_dir, "photoopo.jpg")
+    photo_path = os.path.join(current_dir, "image.jpg")
     if os.path.exists(photo_path):
         st.image(photo_path, width=200)
     else:
