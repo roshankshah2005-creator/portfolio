@@ -10,21 +10,31 @@ st.markdown("""
     background-color: #1a102f !important; 
     color: #f5f5f7 !important; 
 } 
-/* Main Page Title */
+/* Main Page Title - MAX ULTRA BOLD */
 h1 {
     color: #dfba73 !important; /* Premium Champagne Gold */
-    font-weight: 800 !important;
+    font-weight: 900 !important; /* Maximum thickness */
+    font-size: 3.2rem !important; /* Increased size */
     letter-spacing: 0.5px;
+    margin-bottom: 5px !important;
+}
+/* Enhanced Custom Subheader styling */
+.heavy-subheader {
+    color: #f1dfbb !important; /* Warm Metallic Cream */
+    font-weight: 800 !important; /* Forced extreme bold */
+    font-size: 1.6rem !important; /* Increased size */
+    margin-top: 0px !important;
+    margin-bottom: 25px !important;
 }
 /* Section Headers */
 h2 { 
     color: #e5c78d !important; /* Soft Satin Gold */
-    font-weight: 700 !important; 
+    font-weight: 800 !important; 
 } 
-/* Subheaders and Project Titles */
+/* Project Titles */
 h3, h4 { 
     color: #f1dfbb !important; /* Warm Metallic Cream */
-    font-weight: 600 !important; 
+    font-weight: 700 !important; 
 } 
 /* Standard Body Text */
 p, span, li, div { 
@@ -35,7 +45,7 @@ p, span, li, div {
 a { 
     color: #dfba73 !important; 
     text-decoration: none !important; 
-    font-weight: 600; 
+    font-weight: 700 !important; 
 } 
 a:hover { 
     text-decoration: underline !important; 
@@ -46,7 +56,8 @@ a:hover {
 
 # ---------- TITLE & HERO SECTION ----------
 st.title("Roshan's Portfolio")
-st.subheader("Chemical Engineering Student | Data Science Enthusiast")
+# Using a custom HTML container to completely force the maximum thickness on the subtitle
+st.markdown('<p class="heavy-subheader">Chemical Engineering Student | Data Science Enthusiast</p>', unsafe_allow_html=True)
 
 st.markdown("---")
 
@@ -79,12 +90,4 @@ st.header("Projects")
 with st.container():
     st.subheader("Project no. 1: Video Game Market Analysis")
     st.write("An end-to-end data processing and analysis project exploring historical video game industry sales trends.")
-    st.markdown("🔗 **GitHub Link:** [Video Game Market Analysis](https://github.com/roshankshah2005-creator/Video-Game-Market-Analysis/tree/main)")
-
-st.markdown("---")
-
-# ---------- CONTACT SECTION ----------
-st.header("Contact Me")
-st.markdown("📧 **Email:** roshank.shah2005@gmail.com")
-st.markdown("💼 **LinkedIn:** [roshan-kumar-sah-5158653a5](https://www.linkedin.com/in/roshan-kumar-sah-5158653a5)")
-st.markdown("🐙 **GitHub:** [roshankshah2005-creator](https://github.com/roshankshah2005-creator)")
+    st.markdown("🔗 **GitHub Link:** [Video Game Market Analysis](
