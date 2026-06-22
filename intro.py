@@ -3,49 +3,59 @@ import os
 
 st.set_page_config(page_title="My Portfolio", layout="wide")
 
-# ---------- GLOBAL PREMIUM LUXURY CSS CUSTOMIZATION ----------
+# ---------- FORCE MAX LEVEL TITLE CSS CUSTOMIZATION ----------
 st.markdown("""
 <style>
 .stApp { 
     background-color: #1a102f !important; 
     color: #f5f5f7 !important; 
 } 
-/* Main Page Title - COOMPLETELY MAXIMIZED AS A MASTER HEADER */
+
+/* 💥 TARGETING STREAMLIT'S EXACT INTERNAL TITLE WRAPPER FOR IMMENSE SIZE */
+[data-testid="stHeaderBlock"] h1,
+.main .element-container h1,
+.stApp h1, 
 h1 {
     color: #dfba73 !important; /* Premium Champagne Gold */
     font-weight: 900 !important; /* Maximum possible thickness */
-    font-size: clamp(3.5rem, 6vw, 5rem) !important; /* Ultra bold responsive sizing */
+    font-size: 75px !important; /* Absolute massive size overwrite */
     line-height: 1.1 !important;
-    letter-spacing: -1px !important; /* Premium tight editorial tracking */
-    margin-top: 10px !important;
-    margin-bottom: 10px !important;
-    text-shadow: 3px 3px 15px rgba(0, 0, 0, 0.6) !important; /* Soft backdrop pop */
+    letter-spacing: -1.5px !important;
+    margin-top: 5px !important;
+    margin-bottom: 5px !important;
+    display: block !important;
 }
+
 /* Enhanced Custom Subheader styling */
 .heavy-subheader {
     color: #f1dfbb !important; /* Warm Metallic Cream */
     font-weight: 800 !important; /* Forced extreme bold */
-    font-size: clamp(1.4rem, 2.5vw, 1.9rem) !important; /* Responsive subheader */
+    font-size: 26px !important; /* Absolute locked size */
     margin-top: 0px !important;
     margin-bottom: 35px !important;
     letter-spacing: 0.3px;
+    display: block !important;
 }
+
 /* Section Headers */
 h2 { 
     color: #e5c78d !important; /* Soft Satin Gold */
     font-weight: 800 !important; 
-    font-size: 2rem !important;
+    font-size: 32px !important;
 } 
+
 /* Project Titles */
 h3, h4 { 
     color: #f1dfbb !important; /* Warm Metallic Cream */
     font-weight: 700 !important; 
 } 
+
 /* Standard Body Text */
 p, span, li, div { 
     color: #f5f5f7 !important; 
     font-size: 16px;
 } 
+
 /* Active Interactive Links */
 a { 
     color: #dfba73 !important; 
