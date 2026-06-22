@@ -3,7 +3,7 @@ import os
 
 st.set_page_config(page_title="My Portfolio", layout="wide")
 
-# ---------- ----------
+# ---------- FORCED LUXURY SYSTEM CSS CUSTOMIZATION ----------
 st.markdown("""
 <style>
 .stApp { 
@@ -107,26 +107,4 @@ with col4:
     st.write("• **Chemical Process Calculations:** Material and energy balances for complex systems.")
     st.write("• **Fluid Mechanics:** Behavior of fluids, piping networks, and transport phenomena.")
     st.write("• **Chemical Engineering Thermodynamics:** Phase equilibrium and energy conversion laws.")
-    st.write("• **Advanced Mathematics:** Numerical methods, linear algebra, and differential equations.")
-
-st.markdown("---")
-
-# ---------- SKILLS SECTION ----------
-st.header("Skills")
-st.success("⚡ Python  |  SQL  |  Pandas  |  NumPy  |  Matplotlib | Seaborn")
-
-st.markdown("---")
-
-# ---------- PROJECTS SECTION ----------
-st.header("Projects")
-with st.container():
-    st.subheader("Project no. 1: Video Game Market Analysis")
-    st.write("An end-to-end data processing and analysis project exploring historical video game industry sales trends.")
-    st.markdown("🔗 **GitHub Link:** [Video Game Market Analysis](https://github.com/roshankshah2005-creator/Video-Game-Market-Analysis/tree/main)")
-
-st.markdown("---")
-
-# ---------- CONTACT SECTION ----------
-st.header("Contact Me")
-st.markdown("📧 **Email:** roshank.shah2005@gmail.com")
-st.markdown("💼 **LinkedIn:** [roshan-kumar-sah-5158653a5](
+    st.write("• **Advanced Mathematics:** Numerical methods, linear algebra, and differential
