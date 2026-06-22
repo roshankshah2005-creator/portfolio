@@ -4,29 +4,39 @@ import os
 
 st.set_page_config(page_title="My Portfolio", layout="wide")
 
-# ---------- FUNCTION TO ENCODE IMAGE ----------
-def get_base64(file):
-    with open(file, "rb") as f:
-        data = f.read()
-    return base64.b64encode(data).decode()
+# ---------- AUTO-SEARCH IMAGE ENGINE ----------
+def find_and_encode_image(filename):
+    """
+    Scans the entire repository directory tree to find the filename,
+    preventing any crash and handling location shifts perfectly.
+    """
+    # Search recursively starting from the main execution folder
+    for root, dirs, files in os.walk("."):
+        if filename in files:
+            full_path = os.path.join(root, filename)
+            with open(full_path, "rb") as f:
+                data = f.read()
+            return base64.b64encode(data).decode(), None
+            
+    # If not found anywhere, return a list of folders we found to debug
+    all_folders = [root for root, dirs, files in os.walk(".")]
+    return None, all_folders
 
-# Find the main root directory, then step into the 'images' folder
-current_dir = os.path.dirname(os.path.abspath(__file__))  # portfolio folder
-root_dir = os.path.dirname(current_dir)                    # main project folder
-images_dir = os.path.join(root_dir, "images")              # images folder
+# Run the search for your files
+bg_encoded, debug_folders_bg = find_and_encode_image("oip.jpg")
+profile_encoded, debug_folders_prof = find_and_encode_image("image.jpg")
 
-# Safe paths directly inside your 'images' folder
-background_path = os.path.join(images_dir, "oip.jpg")
-photo_path = os.path.join(images_dir, "image.jpg")
-
-# Encode the background image
-img_base64 = get_base64(background_path)
+# Set up background style safely based on search results
+if bg_encoded:
+    background_style = f'background-image: url("data:image/jpg;base64,{bg_encoded}");'
+else:
+    background_style = 'background: linear-gradient(135deg, #1e1e2f, #252545);'
 
 # ---------- HERO SECTION ----------
 st.markdown(f"""
 <style>
 .hero {{
-    background-image: url("data:image/jpg;base64,{img_base64}");
+    {background_style}
     background-size: cover;
     background-position: center;
     padding: 120px 40px;
@@ -53,12 +63,21 @@ st.markdown(f"""
 
 st.write("\n")
 
+# ---------- DIAGNOSTIC BAR (Only shows if files are genuinely missing) ----------
+if not bg_encoded or not profile_encoded:
+    st.error("⚠️ File Search Diagnostic Engine Mode Active")
+    st.write("The files could not be detected in any repository directory. Here is the current structure Streamlit sees:")
+    if debug_folders_bg:
+        st.json(debug_folders_bg)
+
 # ---------- ABOUT ----------
 col1, col2 = st.columns([1, 2])
 
 with col1:
-    # Load your profile photo safely from the images folder
-    st.image(photo_path, width=200)
+    if profile_encoded:
+        st.markdown(f'<img src="data:image/jpg;base64,{profile_encoded}" width="200" style="border-radius:10px;">', unsafe_allow_html=True)
+    else:
+        st.warning("👤 Profile image ('image.jpg') missing.")
 
 with col2:
     st.header("About Me")
