@@ -14,8 +14,8 @@ st.markdown("""
 /* CUSTOM GLOBAL BYPASS FOR MASSSIVE PORTFOLIO HEADER */
 .master-header {
     color: #dfba73 !important; /* Premium Champagne Gold */
-    font-weight: 900 !important; /* Maximum possible thickness */
-    font-size: 80px !important; /* Massive display scale */
+    font-weight: 900 !important; 
+    font-size: 80px !important; 
     line-height: 1.1 !important;
     letter-spacing: -2px !important;
     margin-top: 20px !important;
@@ -26,31 +26,33 @@ st.markdown("""
 /* SHIFTED TOWARD THE CENTER UNDER THE MAIN HEADER */
 .heavy-subheader {
     color: #f1dfbb !important; /* Warm Metallic Cream */
-    font-weight: 800 !important; /* Forced extreme bold */
-    font-size: 26px !important; /* Absolute locked size */
+    font-weight: 800 !important; 
+    font-size: 26px !important; 
     margin-top: 0px !important;
     margin-bottom: 35px !important;
     letter-spacing: 0.3px;
     padding-left: 20px !important;
 }
 
-/* Section Headers */
+/* Section Headers scaled slightly to match the larger body text */
 h2 { 
     color: #e5c78d !important; /* Soft Satin Gold */
     font-weight: 800 !important; 
-    font-size: 32px !important;
+    font-size: 34px !important;
 } 
 
-/* Project Titles */
+/* Project Titles scaled slightly */
 h3, h4 { 
     color: #f1dfbb !important; /* Warm Metallic Cream */
     font-weight: 700 !important; 
+    font-size: 24px !important;
 } 
 
-/* Standard Body Text */
+/* 💥 ENHANCED BODY TEXT SIZE (LOCKED TO 20px WITH OPTIMIZED LINE HEIGHT) */
 p, span, li, div { 
     color: #f5f5f7 !important; 
-    font-size: 16px;
+    font-size: 20px !important; /* Upgraded to 20px */
+    line-height: 1.6 !important; 
 } 
 
 /* Active Interactive Links */
@@ -101,7 +103,7 @@ with col3:
     st.write("• **Interests:** Process Simulation, Optimization, and Data-Driven Modeling")
 
 with col4:
-    st.subheader("🧪 3rd Semester Core Core Engineering Modules")
+    st.subheader("🧪 3rd Semester Core Engineering Modules")
     st.write("• **Chemical Process Calculations:** Material and energy balances for complex systems.")
     st.write("• **Fluid Mechanics:** Behavior of fluids, piping networks, and transport phenomena.")
     st.write("• **Chemical Engineering Thermodynamics:** Phase equilibrium and energy conversion laws.")
@@ -120,12 +122,4 @@ st.header("Projects")
 with st.container():
     st.subheader("Project no. 1: Video Game Market Analysis")
     st.write("An end-to-end data processing and analysis project exploring historical video game industry sales trends.")
-    st.markdown("""🔗 **GitHub Link:** [Video Game Market Analysis](https://github.com/roshankshah2005-creator/Video-Game-Market-Analysis/tree/main)""")
-
-st.markdown("---")
-
-# ---------- CONTACT SECTION ----------
-st.header("Contact Me")
-st.markdown("""📧 **Email:** roshank.shah2005@gmail.com""")
-st.markdown("""💼 **LinkedIn:** [roshan-kumar-sah-5158653a5](https://www.linkedin.com/in/roshan-kumar-sah-5158653a5)""")
-st.markdown("""🐙 **GitHub:** [roshankshah2005-creator](https://github.com/roshankshah2005-creator)""")
+    st.markdown("""🔗 **GitHub Link:** [Video Game Market Analysis](
