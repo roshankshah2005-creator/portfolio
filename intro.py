@@ -6,6 +6,14 @@ st.set_page_config(page_title="My Portfolio", layout="wide")
 # ---------- BACKGROUND ----------
 st.markdown("""
 <style>
+/* Hide the top header bar while preserving the 'Manage app' button */
+header {visibility: hidden;}
+[data-testid="stHeader"] {display: none;}
+div[data-testid="stDecoration"] {display: none;}
+
+/* Adjust top padding since the top bar is gone */
+.block-container {padding-top: 2rem !important;}
+
 .stApp { background-color: #1a102f !important; color: #f5f5f7 !important; } 
 .master-header { color: #dfba73 !important; font-weight: 900 !important; font-size: 80px !important; line-height: 1.1 !important; letter-spacing: -2px !important; margin-top: 20px !important; margin-bottom: 5px !important; font-family: sans-serif !important; }
 .heavy-subheader { color: #f1dfbb !important; font-weight: 800 !important; font-size: 26px !important; margin-top: 0px !important; margin-bottom: 35px !important; letter-spacing: 0.3px; padding-left: 20px !important; }
@@ -48,7 +56,7 @@ col3, col4 = st.columns(2)
 with col3:
     st.subheader("🎓 Academic Background")
     st.write("• **Degree:** B.Tech in Chemical Engineering")
-    st.write("• **Institution:** National Institute of Technology (NIT),Durgapur")
+    st.write("• **Institution:** National Institute of Technology (NIT), Durgapur")
     st.write("• **Batch:** 2025-29")
     st.write("• **Interests:** Process Simulation and Data Modeling")
 
