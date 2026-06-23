@@ -3,7 +3,7 @@ import os
 
 st.set_page_config(page_title="My Portfolio", layout="wide")
 
-# ---------- GLOBAL PREMIUM LUXURY CUSTOMIZATION ----------
+# ---------- BACKGROUND ----------
 st.markdown("""
 <style>
 .stApp { background-color: #1a102f !important; color: #f5f5f7 !important; } 
@@ -48,7 +48,8 @@ col3, col4 = st.columns(2)
 with col3:
     st.subheader("🎓 Academic Background")
     st.write("• **Degree:** B.Tech in Chemical Engineering")
-    st.write("• **Institution:** National Institute of Technology (NIT)")
+    st.write("• **Institution:** National Institute of Technology (NIT),Durgapur")
+    st.write("• **Batch:** 2025-29")
     st.write("• **Interests:** Process Simulation and Data Modeling")
 
 with col4:
