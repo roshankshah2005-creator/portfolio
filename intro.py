@@ -79,8 +79,11 @@ st.header("Projects")
 with st.container():
     st.subheader("Project no. 1: Video Game Market Analysis")
     st.write("Data processing and analysis project exploring video game industry sales trends.")
-    st.markdown("[🔗 GitHub Repository Link](https://github.com/roshankshah2005-creator/Video-Game-Market-Analysis/tree/main)")
-
+    st.markdown("[🔗 GitHub Repository Link](https://github.com/roshankshah2005-creator/Video-Game-Market-Analysis)")
+    st.subheader("Project no. 2: AI Student Score Predictor")
+    st.write("Machine learning pipeline and interactive intelligence dashboard exploring academic success drivers and student performance trends.")
+    st.markdown("[🔗 GitHub Repository Link](https://github.com/roshankshah2005-creator/mlprojects)")
+    st.markdown("[🌐Project Website Link](https://3ioccprssrwschfmlonehi.streamlit.app/)")
 st.markdown("---")
 
 # ---------- CONTACT SECTION ----------
