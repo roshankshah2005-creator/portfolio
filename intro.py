@@ -84,6 +84,10 @@ with st.container():
     st.write("Machine learning pipeline and interactive intelligence dashboard exploring academic success drivers and student performance trends.")
     st.markdown("[🔗 GitHub Repository Link](https://github.com/roshankshah2005-creator/mlprojects)")
     st.markdown("[🌐Project Website Link](https://3ioccprssrwschfmlonehi.streamlit.app/)")
+    st.subheader("Project no. 3: Netflix Analytics")
+    st.write("Interactive Netflix analytics platform for exploring content distribution, country-wise trends, ratings, genres, and release history.")
+    st.markdown("[🔗 GitHub Repository Link](https://github.com/roshankshah2005-creator/NETFLIX_ANALYTICS_DASHBOARD)")
+    st.markdown("[🌐Project Website Link](https://netflixinsights.streamlit.app/)")
 st.markdown("---")
 
 # ---------- CONTACT SECTION ----------
