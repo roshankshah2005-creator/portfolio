@@ -9,7 +9,7 @@ st.set_page_config(
     initial_sidebar_state="collapsed"
 )
 
-# ---------- NEW GEN GLASSMORPHISM STYLING (CSS) ----------
+# ---------- BLACK PANTHER DESIGN & STYLING (CSS) ----------
 st.markdown("""
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
@@ -19,11 +19,11 @@ header {visibility: hidden;}
 [data-testid="stHeader"] {display: none;}
 footer {visibility: hidden;}
 
-/* Ambient Dark Background */
+/* Black Panther Vibranium & Obsidian Dark Background */
 .stApp {
-    background: radial-gradient(circle at 50% 0%, #1e1b4b 0%, #0f172a 50%, #030712 100%) !important;
+    background: radial-gradient(circle at 50% 0%, #1a0b2e 0%, #090510 50%, #030107 100%) !important;
     font-family: 'Plus Jakarta Sans', sans-serif;
-    color: #f8fafc !important;
+    color: #f1f5f9 !important;
 }
 
 .block-container {
@@ -34,7 +34,7 @@ footer {visibility: hidden;}
 
 /* Typography */
 .hero-title {
-    background: linear-gradient(135deg, #ffffff 30%, #a855f7 100%);
+    background: linear-gradient(135deg, #ffffff 30%, #c084fc 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-weight: 800 !important;
@@ -52,7 +52,7 @@ footer {visibility: hidden;}
 }
 
 h2 {
-    color: #e2e8f0 !important;
+    color: #e9d5ff !important;
     font-weight: 700 !important;
     font-size: 24px !important;
     margin-top: 0px !important;
@@ -66,32 +66,32 @@ p, span, li, div {
     line-height: 1.6 !important;
 }
 
-/* New Gen Transparent Glass Boxes */
+/* Frosted Transparent Glass Boxes with Glow */
 .glass-box {
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
+    background: rgba(255, 255, 255, 0.025);
+    border: 1px solid rgba(168, 85, 247, 0.15);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     border-radius: 20px;
     padding: 28px;
     margin-bottom: 24px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .glass-box:hover {
-    background: rgba(255, 255, 255, 0.04);
-    border-color: rgba(168, 85, 247, 0.3);
+    background: rgba(168, 85, 247, 0.04);
+    border-color: rgba(192, 132, 252, 0.5);
     transform: translateY(-3px);
-    box-shadow: 0 25px 50px rgba(168, 85, 247, 0.1);
+    box-shadow: 0 25px 50px rgba(168, 85, 247, 0.15);
 }
 
-/* Modern Links & Badges */
+/* Modern Links & Tags */
 .skill-tag {
     display: inline-block;
     background: rgba(168, 85, 247, 0.1);
-    color: #d8b4fe !important;
-    border: 1px solid rgba(168, 85, 247, 0.2);
+    color: #e9d5ff !important;
+    border: 1px solid rgba(168, 85, 247, 0.3);
     padding: 6px 14px;
     border-radius: 30px;
     font-weight: 600;
@@ -107,7 +107,7 @@ a {
 }
 
 a:hover {
-    color: #e879f9 !important;
+    color: #e9d5ff !important;
     text-decoration: underline !important;
 }
 </style>
@@ -127,7 +127,7 @@ with col1:
         st.image(photo_path, width=210)
     else:
         st.markdown("""
-        <div class="glass-box" style="text-align:center; padding: 60px 10px; color: #64748b;">
+        <div class="glass-box" style="text-align:center; padding: 60px 10px; color: #94a3b8;">
             👤 Upload Image<br><small>images/image.jpeg</small>
         </div>
         """, unsafe_allow_html=True)
