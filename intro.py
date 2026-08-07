@@ -32,13 +32,13 @@ footer {visibility: hidden;}
     padding-bottom: 4rem !important;
 }
 
-/* Typography */
+/* Typography with Increased Text Sizes */
 .hero-title {
     background: linear-gradient(135deg, #ffffff 30%, #c084fc 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-weight: 800 !important;
-    font-size: 52px !important;
+    font-size: 58px !important;
     letter-spacing: -1.5px !important;
     margin-bottom: 0px !important;
 }
@@ -46,7 +46,7 @@ footer {visibility: hidden;}
 .hero-subtitle {
     color: #cbd5e1 !important;
     font-weight: 600 !important;
-    font-size: 20px !important;
+    font-size: 22px !important;
     margin-top: 5px !important;
     margin-bottom: 25px !important;
 }
@@ -54,7 +54,7 @@ footer {visibility: hidden;}
 h2 {
     color: #e9d5ff !important;
     font-weight: 700 !important;
-    font-size: 24px !important;
+    font-size: 28px !important;
     margin-top: 0px !important;
     margin-bottom: 15px !important;
     letter-spacing: -0.5px;
@@ -62,8 +62,8 @@ h2 {
 
 p, span, li, div {
     color: #94a3b8 !important;
-    font-size: 16px !important;
-    line-height: 1.6 !important;
+    font-size: 18px !important;
+    line-height: 1.7 !important;
 }
 
 /* Frosted Transparent Glass Boxes with Glow */
@@ -86,7 +86,7 @@ p, span, li, div {
     box-shadow: 0 25px 50px rgba(168, 85, 247, 0.15);
 }
 
-/* Modern Links & Tags */
+/* Modern Tags */
 .skill-tag {
     display: inline-block;
     background: rgba(168, 85, 247, 0.1);
@@ -95,14 +95,16 @@ p, span, li, div {
     padding: 6px 14px;
     border-radius: 30px;
     font-weight: 600;
-    font-size: 14px !important;
+    font-size: 15px !important;
     margin: 4px;
 }
 
+/* Bolder Clickable Links */
 a {
     color: #c084fc !important;
     text-decoration: none !important;
-    font-weight: 600 !important;
+    font-weight: 800 !important;
+    font-size: 18px !important;
     transition: color 0.2s ease;
 }
 
@@ -209,8 +211,8 @@ for i in range(0, len(projects), 2):
         p = projects[i]
         st.markdown(f"""
         <div class="glass-box">
-            <h3 style="color: #f1f5f9; font-size: 19px; margin-bottom: 8px;">{p['title']}</h3>
-            <p style="margin-bottom: 16px; font-size: 15px;">{p['desc']}</p>
+            <h3 style="color: #f1f5f9; font-size: 20px; margin-bottom: 8px;">{p['title']}</h3>
+            <p style="margin-bottom: 16px;">{p['desc']}</p>
             <p style="margin: 0px;">
                 <a href="{p['github']}" target="_blank">🔗 GitHub</a> &nbsp;&nbsp;•&nbsp;&nbsp; 
                 <a href="{p['demo']}" target="_blank">🌐 Live App</a>
@@ -223,8 +225,8 @@ for i in range(0, len(projects), 2):
             p = projects[i+1]
             st.markdown(f"""
             <div class="glass-box">
-                <h3 style="color: #f1f5f9; font-size: 19px; margin-bottom: 8px;">{p['title']}</h3>
-                <p style="margin-bottom: 16px; font-size: 15px;">{p['desc']}</p>
+                <h3 style="color: #f1f5f9; font-size: 20px; margin-bottom: 8px;">{p['title']}</h3>
+                <p style="margin-bottom: 16px;">{p['desc']}</p>
                 <p style="margin: 0px;">
                     <a href="{p['github']}" target="_blank">🔗 GitHub</a> &nbsp;&nbsp;•&nbsp;&nbsp; 
                     <a href="{p['demo']}" target="_blank">🌐 Live App</a>
@@ -237,7 +239,7 @@ st.markdown("""
 <div class="glass-box" style="text-align: center; margin-top: 10px;">
     <h2 style="margin-bottom: 10px;">Let's Connect</h2>
     <p style="margin-bottom: 20px;">I'm actively looking for opportunities in data science and engineering.</p>
-    <p style="font-size: 17px !important; margin: 0px;">
+    <p style="margin: 0px;">
         📧 <b>Email:</b> <a href="mailto:roshank.shah2005@gmail.com">roshank.shah2005@gmail.com</a><br><br>
         💼 <b>LinkedIn:</b> <a href="https://www.linkedin.com/in/roshan-kumar-sah-5158653a5" target="_blank">Profile Link</a> &nbsp;&nbsp;•&nbsp;&nbsp;
         🐙 <b>GitHub:</b> <a href="https://github.com/roshankshah2005-creator" target="_blank">Profile Link</a>
