@@ -88,10 +88,14 @@ with st.container():
     st.write("Interactive Netflix analytics platform for exploring content distribution, country-wise trends, ratings, genres, and release history.")
     st.markdown("[🔗 GitHub Repository Link](https://github.com/roshankshah2005-creator/NETFLIX_ANALYTICS_DASHBOARD)")
     st.markdown("[🌐Project Website Link](https://netflixinsights.streamlit.app/)")
-    st.subheader("Project no. 3: Student Performance Predictor")
+    st.subheader("Project no. 4: Student Performance Predictor")
     st.write("A predictive web app for forecasting exam scores and analyzing the impact of study habits, attendance, and sleep on academic performance.")
     st.markdown("[🔗 GitHub Repository Link](https://github.com/roshankshah2005-creator/Student-Performance-Prediction)")
     st.markdown("[🌐Project Website Link](https://soft-treacle-87a14a.netlify.app/)")
+    st.subheader("Project no. 5: Video Game Market Analysis")
+    st.write("A machine learning web application that predicts student exam scores and delivers personalized, data-driven academic insights based on study hours, attendance, sleep patterns, and previous grades.")
+    st.markdown("[🔗 GitHub Repository Link](https://github.com/roshankshah2005-creator/Video-Game-Market-Analysis)")
+    st.markdown("[🌐Project Website Link](https://uwkdhet8w3cmbcp3ijboit.streamlit.app/)")
 st.markdown("---")
 
 # ---------- CONTACT SECTION ----------
