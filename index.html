@@ -1,16 +1,17 @@
-import streamlit as st
 import os
+import streamlit as st
 
 # ---------- PAGE CONFIGURATION ----------
 st.set_page_config(
     page_title="Roshan Kumar Sah | Portfolio",
     page_icon="⚡",
     layout="wide",
-    initial_sidebar_state="collapsed"
+    initial_sidebar_state="collapsed",
 )
 
 # ---------- BLACK PANTHER DESIGN & STYLING (CSS) ----------
-st.markdown("""
+st.markdown(
+    """
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
 
@@ -18,6 +19,7 @@ st.markdown("""
 header {visibility: hidden;}
 [data-testid="stHeader"] {display: none;}
 footer {visibility: hidden;}
+#MainMenu {visibility: hidden;}
 
 /* Black Panther Vibranium & Obsidian Dark Background */
 .stApp {
@@ -113,11 +115,19 @@ a:hover {
     text-decoration: underline !important;
 }
 </style>
-""", unsafe_allow_html=True)
+""",
+    unsafe_allow_html=True,
+)
 
 # ---------- HEADER SECTION ----------
-st.markdown('<div class="hero-title">Roshan Kumar Sah</div>', unsafe_allow_html=True)
-st.markdown('<div class="hero-subtitle">Chemical Engineering Undergraduate &nbsp;•&nbsp; Data Science Enthusiast</div>', unsafe_allow_html=True)
+st.markdown(
+    '<div class="hero-title">Roshan Kumar Sah</div>', unsafe_allow_html=True
+)
+st.markdown(
+    '<div class="hero-subtitle">Chemical Engineering Undergraduate &nbsp;•&nbsp;'
+    " Data Science Enthusiast</div>",
+    unsafe_allow_html=True,
+)
 st.markdown("<br>", unsafe_allow_html=True)
 
 # ---------- ABOUT ME SECTION ----------
@@ -128,36 +138,46 @@ with col1:
     if os.path.exists(photo_path):
         st.image(photo_path, width=210)
     else:
-        st.markdown("""
+        st.markdown(
+            """
         <div class="glass-box" style="text-align:center; padding: 60px 10px; color: #94a3b8;">
             👤 Upload Image<br><small>images/image.jpeg</small>
         </div>
-        """, unsafe_allow_html=True)
+        """,
+            unsafe_allow_html=True,
+        )
 
 with col2:
-    st.markdown("""
+    st.markdown(
+        """
     <div class="glass-box">
         <h2>About Me</h2>
         <p>I am an engineering student bridging the gap between physical systems and data science. My academic core is in Chemical Engineering at NIT Durgapur, where I explore process dynamics and operational mechanics.</p>
         <p style="margin-top: 12px;">Alongside my coursework, I build machine learning models, analytical dashboards, and automation pipelines in Python to unlock data-driven insights.</p>
     </div>
-    """, unsafe_allow_html=True)
+    """,
+        unsafe_allow_html=True,
+    )
 
 # ---------- EDUCATION & SKILLS ----------
 col3, col4 = st.columns(2, gap="large")
 
 with col3:
-    st.markdown("""
+    st.markdown(
+        """
     <div class="glass-box">
         <h2>Education</h2>
         <p><b>Degree:</b> B.Tech in Chemical Engineering<br>
         <b>Institution:</b> NIT Durgapur (2025–2029)<br>
         <b>Focus:</b> Process Simulation & Data Modeling</p>
     </div>
-    """, unsafe_allow_html=True)
+    """,
+        unsafe_allow_html=True,
+    )
 
 with col4:
-    st.markdown("""
+    st.markdown(
+        """
     <div class="glass-box">
         <h2>Technical Stack</h2>
         <div style="margin-top: 8px;">
@@ -171,7 +191,9 @@ with col4:
             <span class="skill-tag">Seaborn</span>
         </div>
     </div>
-    """, unsafe_allow_html=True)
+    """,
+        unsafe_allow_html=True,
+    )
 
 # ---------- PROJECTS SECTION ----------
 st.markdown("<h2>Featured Projects</h2>", unsafe_allow_html=True)
@@ -179,37 +201,61 @@ st.markdown("<h2>Featured Projects</h2>", unsafe_allow_html=True)
 projects = [
     {
         "title": "🎓 AI Student Score Predictor",
-        "desc": "Machine learning pipeline and interactive intelligence dashboard exploring academic success drivers and student performance trends.",
-        "github": "https://github.com/roshankshah2005-creator/mlprojects",
-        "demo": "https://3ioccprssrwschfmlonehi.streamlit.app/"
+        "desc": (
+            "Machine learning pipeline and interactive intelligence dashboard"
+            " exploring academic success drivers and student performance"
+            " trends."
+        ),
+        "github": (
+            "https://github.com/roshankshah2005-creator/mlprojects"
+        ),
+        "demo": "https://3ioccprssrwschfmlonehi.streamlit.app/",
     },
     {
         "title": "📊 Netflix Analytics Dashboard",
-        "desc": "Interactive Netflix analytics platform for exploring content distribution, country-wise trends, ratings, genres, and release history.",
-        "github": "https://github.com/roshankshah2005-creator/NETFLIX_ANALYTICS_DASHBOARD",
-        "demo": "https://netflixinsights.streamlit.app/"
+        "desc": (
+            "Interactive Netflix analytics platform for exploring content"
+            " distribution, country-wise trends, ratings, genres, and release"
+            " history."
+        ),
+        "github": (
+            "https://github.com/roshankshah2005-creator/NETFLIX_ANALYTICS_DASHBOARD"
+        ),
+        "demo": "https://netflixinsights.streamlit.app/",
     },
     {
         "title": "🎯 Video Game Market Analysis",
-        "desc": "Advanced exploratory data analysis and SQL pipeline investigating global video game industry sales trends and regional preferences.",
-        "github": "https://github.com/roshankshah2005-creator/Video-Game-Market-Analysis",
-        "demo": "https://uwkdhet8w3cmbcp3ijboit.streamlit.app/"
+        "desc": (
+            "Advanced exploratory data analysis and SQL pipeline investigating"
+            " global video game industry sales trends and regional"
+            " preferences."
+        ),
+        "github": (
+            "https://github.com/roshankshah2005-creator/Video-Game-Market-Analysis"
+        ),
+        "demo": "https://uwkdhet8w3cmbcp3ijboit.streamlit.app/",
     },
     {
         "title": "📚 Student Performance Predictor",
-        "desc": "A predictive web app for forecasting exam scores and analyzing the impact of study habits, attendance, and sleep on academic performance.",
-        "github": "https://github.com/roshankshah2005-creator/Student-Performance-Prediction",
-        "demo": "https://soft-treacle-87a14a.netlify.app/"
-    }
+        "desc": (
+            "A predictive web app for forecasting exam scores and analyzing the"
+            " impact of study habits, attendance, and sleep on academic"
+            " performance."
+        ),
+        "github": (
+            "https://github.com/roshankshah2005-creator/Student-Performance-Prediction"
+        ),
+        "demo": "https://soft-treacle-87a14a.netlify.app/",
+    },
 ]
 
-# Simple clean grid loop for projects inside glass boxes
 for i in range(0, len(projects), 2):
     p_col1, p_col2 = st.columns(2, gap="large")
-    
+
     with p_col1:
         p = projects[i]
-        st.markdown(f"""
+        st.markdown(
+            f"""
         <div class="glass-box">
             <h3 style="color: #f1f5f9; font-size: 20px; margin-bottom: 8px;">{p['title']}</h3>
             <p style="margin-bottom: 16px;">{p['desc']}</p>
@@ -218,12 +264,15 @@ for i in range(0, len(projects), 2):
                 <a href="{p['demo']}" target="_blank">🌐 Live App</a>
             </p>
         </div>
-        """, unsafe_allow_html=True)
-        
+        """,
+            unsafe_allow_html=True,
+        )
+
     if i + 1 < len(projects):
         with p_col2:
-            p = projects[i+1]
-            st.markdown(f"""
+            p = projects[i + 1]
+            st.markdown(
+                f"""
             <div class="glass-box">
                 <h3 style="color: #f1f5f9; font-size: 20px; margin-bottom: 8px;">{p['title']}</h3>
                 <p style="margin-bottom: 16px;">{p['desc']}</p>
@@ -232,10 +281,13 @@ for i in range(0, len(projects), 2):
                     <a href="{p['demo']}" target="_blank">🌐 Live App</a>
                 </p>
             </div>
-            """, unsafe_allow_html=True)
+            """,
+                unsafe_allow_html=True,
+            )
 
 # ---------- CONTACT SECTION ----------
-st.markdown("""
+st.markdown(
+    """
 <div class="glass-box" style="text-align: center; margin-top: 10px;">
     <h2 style="margin-bottom: 10px;">Let's Connect</h2>
     <p style="margin-bottom: 20px;">I'm actively looking for opportunities in data science and engineering.</p>
@@ -245,4 +297,6 @@ st.markdown("""
         🐙 <b>GitHub:</b> <a href="https://github.com/roshankshah2005-creator" target="_blank">Profile Link</a>
     </p>
 </div>
-""", unsafe_allow_html=True)
+""",
+    unsafe_allow_html=True,
+)
