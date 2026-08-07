@@ -9,77 +9,114 @@ st.set_page_config(
     initial_sidebar_state="collapsed"
 )
 
-# ---------- DESIGN & STYLING (CSS) ----------
+# ---------- NEW GEN GLASSMORPHISM STYLING (CSS) ----------
 st.markdown("""
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
 
+/* Hide Streamlit Native Elements */
 header {visibility: hidden;}
 [data-testid="stHeader"] {display: none;}
 footer {visibility: hidden;}
 
+/* Ambient Dark Background */
 .stApp {
-    background-color: #1a102f !important;
+    background: radial-gradient(circle at 50% 0%, #1e1b4b 0%, #0f172a 50%, #030712 100%) !important;
     font-family: 'Plus Jakarta Sans', sans-serif;
-    color: #f5f5f7 !important;
+    color: #f8fafc !important;
 }
 
 .block-container {
-    max-width: 1000px;
-    padding-top: 2rem !important;
+    max-width: 1050px;
+    padding-top: 3rem !important;
+    padding-bottom: 4rem !important;
 }
 
+/* Typography */
 .hero-title {
-    color: #dfba73 !important;
+    background: linear-gradient(135deg, #ffffff 30%, #a855f7 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     font-weight: 800 !important;
-    font-size: 50px !important;
+    font-size: 52px !important;
+    letter-spacing: -1.5px !important;
     margin-bottom: 0px !important;
 }
 
 .hero-subtitle {
-    color: #f1dfbb !important;
-    font-weight: 700 !important;
-    font-size: 22px !important;
-    margin-bottom: 30px !important;
+    color: #cbd5e1 !important;
+    font-weight: 600 !important;
+    font-size: 20px !important;
+    margin-top: 5px !important;
+    margin-bottom: 25px !important;
 }
 
 h2 {
-    color: #e5c78d !important;
+    color: #e2e8f0 !important;
     font-weight: 700 !important;
-    font-size: 28px !important;
-    margin-top: 30px !important;
+    font-size: 24px !important;
+    margin-top: 0px !important;
+    margin-bottom: 15px !important;
+    letter-spacing: -0.5px;
 }
 
 p, span, li, div {
-    color: #f5f5f7 !important;
-    font-size: 18px !important;
+    color: #94a3b8 !important;
+    font-size: 16px !important;
     line-height: 1.6 !important;
 }
 
-.project-box {
+/* New Gen Transparent Glass Boxes */
+.glass-box {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-radius: 20px;
+    padding: 28px;
+    margin-bottom: 24px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-box:hover {
     background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 12px;
-    padding: 20px;
-    margin-bottom: 20px;
+    border-color: rgba(168, 85, 247, 0.3);
+    transform: translateY(-3px);
+    box-shadow: 0 25px 50px rgba(168, 85, 247, 0.1);
+}
+
+/* Modern Links & Badges */
+.skill-tag {
+    display: inline-block;
+    background: rgba(168, 85, 247, 0.1);
+    color: #d8b4fe !important;
+    border: 1px solid rgba(168, 85, 247, 0.2);
+    padding: 6px 14px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 14px !important;
+    margin: 4px;
 }
 
 a {
-    color: #dfba73 !important;
+    color: #c084fc !important;
     text-decoration: none !important;
     font-weight: 600 !important;
+    transition: color 0.2s ease;
 }
+
 a:hover {
+    color: #e879f9 !important;
     text-decoration: underline !important;
-    color: #f1dfbb !important;
 }
 </style>
 """, unsafe_allow_html=True)
 
 # ---------- HEADER SECTION ----------
 st.markdown('<div class="hero-title">Roshan Kumar Sah</div>', unsafe_allow_html=True)
-st.markdown('<div class="hero-subtitle">Chemical Engineering Undergraduate | Data Science Enthusiast</div>', unsafe_allow_html=True)
-st.markdown("---")
+st.markdown('<div class="hero-subtitle">Chemical Engineering Undergraduate &nbsp;•&nbsp; Data Science Enthusiast</div>', unsafe_allow_html=True)
+st.markdown("<br>", unsafe_allow_html=True)
 
 # ---------- ABOUT ME SECTION ----------
 col1, col2 = st.columns([1, 2.5], gap="large")
@@ -87,80 +124,123 @@ photo_path = os.path.join("./images", "image.jpeg")
 
 with col1:
     if os.path.exists(photo_path):
-        st.image(photo_path, width=200)
+        st.image(photo_path, width=210)
     else:
-        st.write("👤 [Profile Image]")
+        st.markdown("""
+        <div class="glass-box" style="text-align:center; padding: 60px 10px; color: #64748b;">
+            👤 Upload Image<br><small>images/image.jpeg</small>
+        </div>
+        """, unsafe_allow_html=True)
 
 with col2:
-    st.markdown("<h2>About Me</h2>", unsafe_allow_html=True)
-    st.write("I am an engineering student bridging the gap between physical systems and data science.")
-    st.write("My academic core is in Chemical Engineering at NIT Durgapur, where I study complex process mechanics.")
-    st.write("Alongside my coursework, I build machine learning models and data pipelines in Python to optimize systems.")
-
-st.markdown("---")
+    st.markdown("""
+    <div class="glass-box">
+        <h2>About Me</h2>
+        <p>I am an engineering student bridging the gap between physical systems and data science. My academic core is in Chemical Engineering at NIT Durgapur, where I explore process dynamics and operational mechanics.</p>
+        <p style="margin-top: 12px;">Alongside my coursework, I build machine learning models, analytical dashboards, and automation pipelines in Python to unlock data-driven insights.</p>
+    </div>
+    """, unsafe_allow_html=True)
 
 # ---------- EDUCATION & SKILLS ----------
 col3, col4 = st.columns(2, gap="large")
 
 with col3:
-    st.markdown("<h2>Education</h2>", unsafe_allow_html=True)
-    st.write("• **Degree:** B.Tech in Chemical Engineering")
-    st.write("• **Institution:** NIT Durgapur (2025–2029)")
-    st.write("• **Focus:** Process Simulation & Data Modeling")
+    st.markdown("""
+    <div class="glass-box">
+        <h2>Education</h2>
+        <p><b>Degree:</b> B.Tech in Chemical Engineering<br>
+        <b>Institution:</b> NIT Durgapur (2025–2029)<br>
+        <b>Focus:</b> Process Simulation & Data Modeling</p>
+    </div>
+    """, unsafe_allow_html=True)
 
 with col4:
-    st.markdown("<h2>Skills</h2>", unsafe_allow_html=True)
-    st.write("⚡ **Languages & Libraries:** Python, SQL, Pandas, NumPy, Scikit-Learn, Streamlit, Matplotlib, Seaborn")
+    st.markdown("""
+    <div class="glass-box">
+        <h2>Technical Stack</h2>
+        <div style="margin-top: 8px;">
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">SQL</span>
+            <span class="skill-tag">Pandas</span>
+            <span class="skill-tag">NumPy</span>
+            <span class="skill-tag">Scikit-Learn</span>
+            <span class="skill-tag">Streamlit</span>
+            <span class="skill-tag">Matplotlib</span>
+            <span class="skill-tag">Seaborn</span>
+        </div>
+    </div>
+    """, unsafe_allow_html=True)
 
-st.markdown("---")
+# ---------- PROJECTS SECTION ----------
+st.markdown("<h2>Featured Projects</h2>", unsafe_allow_html=True)
 
-# ---------- PROJECTS SECTION (Simplified) ----------
-st.markdown("<h2>Projects</h2>", unsafe_allow_html=True)
+projects = [
+    {
+        "title": "🎓 AI Student Score Predictor",
+        "desc": "Machine learning pipeline and interactive intelligence dashboard exploring academic success drivers and student performance trends.",
+        "github": "https://github.com/roshankshah2005-creator/mlprojects",
+        "demo": "https://3ioccprssrwschfmlonehi.streamlit.app/"
+    },
+    {
+        "title": "📊 Netflix Analytics Dashboard",
+        "desc": "Interactive Netflix analytics platform for exploring content distribution, country-wise trends, ratings, genres, and release history.",
+        "github": "https://github.com/roshankshah2005-creator/NETFLIX_ANALYTICS_DASHBOARD",
+        "demo": "https://netflixinsights.streamlit.app/"
+    },
+    {
+        "title": "🎯 Video Game Market Analysis",
+        "desc": "Advanced exploratory data analysis and SQL pipeline investigating global video game industry sales trends and regional preferences.",
+        "github": "https://github.com/roshankshah2005-creator/Video-Game-Market-Analysis",
+        "demo": "https://uwkdhet8w3cmbcp3ijboit.streamlit.app/"
+    },
+    {
+        "title": "📚 Student Performance Predictor",
+        "desc": "A predictive web app for forecasting exam scores and analyzing the impact of study habits, attendance, and sleep on academic performance.",
+        "github": "https://github.com/roshankshah2005-creator/Student-Performance-Prediction",
+        "demo": "https://soft-treacle-87a14a.netlify.app/"
+    }
+]
 
-# Project 1
-st.markdown("""
-<div class="project-box">
-    <h3>🎓 AI Student Score Predictor</h3>
-    <p>Machine learning pipeline and interactive intelligence dashboard exploring academic success drivers and student performance trends.</p>
-    <a href="https://github.com/roshankshah2005-creator/mlprojects" target="_blank">🔗 GitHub</a> &nbsp;|&nbsp; 
-    <a href="https://3ioccprssrwschfmlonehi.streamlit.app/" target="_blank">🌐 Live App</a>
-</div>
-""", unsafe_allow_html=True)
-
-# Project 2
-st.markdown("""
-<div class="project-box">
-    <h3>📊 Netflix Analytics Dashboard</h3>
-    <p>Interactive Netflix analytics platform for exploring content distribution, country-wise trends, ratings, genres, and release history.</p>
-    <a href="https://github.com/roshankshah2005-creator/NETFLIX_ANALYTICS_DASHBOARD" target="_blank">🔗 GitHub</a> &nbsp;|&nbsp; 
-    <a href="https://netflixinsights.streamlit.app/" target="_blank">🌐 Live App</a>
-</div>
-""", unsafe_allow_html=True)
-
-# Project 3
-st.markdown("""
-<div class="project-box">
-    <h3>🎯 Video Game Market Analysis</h3>
-    <p>Advanced exploratory data analysis and SQL pipeline investigating global video game industry sales trends and regional preferences.</p>
-    <a href="https://github.com/roshankshah2005-creator/Video-Game-Market-Analysis" target="_blank">🔗 GitHub</a> &nbsp;|&nbsp; 
-    <a href="https://uwkdhet8w3cmbcp3ijboit.streamlit.app/" target="_blank">🌐 Live App</a>
-</div>
-""", unsafe_allow_html=True)
-
-# Project 4
-st.markdown("""
-<div class="project-box">
-    <h3>📚 Student Performance Predictor</h3>
-    <p>A predictive web app for forecasting exam scores and analyzing the impact of study habits, attendance, and sleep on academic performance.</p>
-    <a href="https://github.com/roshankshah2005-creator/Student-Performance-Prediction" target="_blank">🔗 GitHub</a> &nbsp;|&nbsp; 
-    <a href="https://soft-treacle-87a14a.netlify.app/" target="_blank">🌐 Live App</a>
-</div>
-""", unsafe_allow_html=True)
-
-st.markdown("---")
+# Simple clean grid loop for projects inside glass boxes
+for i in range(0, len(projects), 2):
+    p_col1, p_col2 = st.columns(2, gap="large")
+    
+    with p_col1:
+        p = projects[i]
+        st.markdown(f"""
+        <div class="glass-box">
+            <h3 style="color: #f1f5f9; font-size: 19px; margin-bottom: 8px;">{p['title']}</h3>
+            <p style="margin-bottom: 16px; font-size: 15px;">{p['desc']}</p>
+            <p style="margin: 0px;">
+                <a href="{p['github']}" target="_blank">🔗 GitHub</a> &nbsp;&nbsp;•&nbsp;&nbsp; 
+                <a href="{p['demo']}" target="_blank">🌐 Live App</a>
+            </p>
+        </div>
+        """, unsafe_allow_html=True)
+        
+    if i + 1 < len(projects):
+        with p_col2:
+            p = projects[i+1]
+            st.markdown(f"""
+            <div class="glass-box">
+                <h3 style="color: #f1f5f9; font-size: 19px; margin-bottom: 8px;">{p['title']}</h3>
+                <p style="margin-bottom: 16px; font-size: 15px;">{p['desc']}</p>
+                <p style="margin: 0px;">
+                    <a href="{p['github']}" target="_blank">🔗 GitHub</a> &nbsp;&nbsp;•&nbsp;&nbsp; 
+                    <a href="{p['demo']}" target="_blank">🌐 Live App</a>
+                </p>
+            </div>
+            """, unsafe_allow_html=True)
 
 # ---------- CONTACT SECTION ----------
-st.markdown("<h2>Contact Me</h2>", unsafe_allow_html=True)
-st.markdown("📧 **Email:** roshank.shah2005@gmail.com")
-st.markdown("💼 **LinkedIn:** [Profile Link](https://www.linkedin.com/in/roshan-kumar-sah-5158653a5)")
-st.markdown("🐙 **GitHub:** [Profile Link](https://github.com/roshankshah2005-creator)")
+st.markdown("""
+<div class="glass-box" style="text-align: center; margin-top: 10px;">
+    <h2 style="margin-bottom: 10px;">Let's Connect</h2>
+    <p style="margin-bottom: 20px;">I'm actively looking for opportunities in data science and engineering.</p>
+    <p style="font-size: 17px !important; margin: 0px;">
+        📧 <b>Email:</b> <a href="mailto:roshank.shah2005@gmail.com">roshank.shah2005@gmail.com</a><br><br>
+        💼 <b>LinkedIn:</b> <a href="https://www.linkedin.com/in/roshan-kumar-sah-5158653a5" target="_blank">Profile Link</a> &nbsp;&nbsp;•&nbsp;&nbsp;
+        🐙 <b>GitHub:</b> <a href="https://github.com/roshankshah2005-creator" target="_blank">Profile Link</a>
+    </p>
+</div>
+""", unsafe_allow_html=True)
