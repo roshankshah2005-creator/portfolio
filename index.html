@@ -8,21 +8,25 @@
 <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
     :root{
-        --void:#030308;
+        --void:#020207;
         --panel-a:#0a0714;
         --panel-b:#0d0a1c;
         --vibranium:#7c3aed;
+        --vibranium-2:#5b21b6;
         --vibranium-glow:#b18cf5;
         --gold:#c9a648;
-        --text-hi:#eae6f5;
+        --gold-dim:#8a723a;
+        --text-hi:#f1eefb;
         --text-lo:#93899f;
         --line:rgba(124,58,237,0.28);
     }
     *{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
 
     body{
         background:
-            radial-gradient(circle at 18% 8%, rgba(124,58,237,0.14) 0%, transparent 40%),
+            radial-gradient(circle at 18% 8%, rgba(124,58,237,0.16) 0%, transparent 42%),
+            radial-gradient(circle at 88% 6%, rgba(124,58,237,0.10) 0%, transparent 38%),
             radial-gradient(circle at 85% 78%, rgba(124,58,237,0.10) 0%, transparent 45%),
             var(--void);
         background-attachment:fixed;
@@ -30,6 +34,7 @@
         color:var(--text-lo);
         min-height:100vh;
         padding:0 0 5rem 0;
+        overflow-x:hidden;
     }
 
     /* subtle hex-grid texture overlay */
@@ -43,17 +48,67 @@
 
     .container{max-width:1050px; width:100%; margin:0 auto; padding:0 1.25rem; position:relative; z-index:1;}
 
+    /* TOP NAV */
+    .topnav{
+        position:sticky; top:0; z-index:20;
+        background:rgba(3,2,10,0.72);
+        backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px);
+        border-bottom:1px solid var(--line);
+    }
+    .topnav-inner{
+        max-width:1050px; margin:0 auto; padding:0 1.25rem;
+        height:60px; display:flex; align-items:center; justify-content:space-between;
+    }
+    .brand-mark{
+        display:flex; align-items:center; gap:10px;
+        font-family:'Rajdhani', sans-serif; font-weight:700; letter-spacing:2px; font-size:15px; color:var(--text-hi);
+    }
+    .brand-mark svg{width:22px; height:22px; display:block;}
+    .navlinks{display:flex; gap:28px;}
+    .navlinks a{
+        font-family:'Rajdhani', sans-serif; font-size:14px; font-weight:600; letter-spacing:1.5px;
+        color:var(--text-lo); border:none;
+    }
+    .navlinks a:hover{color:var(--vibranium-glow);}
+    @media (max-width:640px){ .navlinks{display:none;} }
+
     /* HERO */
     .hero{
-        padding:4.5rem 0 3rem 0;
+        padding:5.5rem 0 3.5rem 0;
         border-bottom:1px solid var(--line);
         margin-bottom:2.5rem;
         position:relative;
+        display:grid;
+        grid-template-columns:1fr auto;
+        align-items:center;
+        gap:2rem;
     }
     .hero::before{
         content:"";
         position:absolute; left:0; bottom:-1px; width:140px; height:2px;
         background:linear-gradient(90deg, var(--gold), transparent);
+    }
+    .hero-content{
+        animation:rise 0.9s cubic-bezier(0.16,1,0.3,1) both;
+    }
+    .hero-emblem{
+        justify-self:end;
+        animation:rise 0.9s cubic-bezier(0.16,1,0.3,1) 0.15s both, pulse-glow 4.5s ease-in-out infinite 1s;
+    }
+    @keyframes rise{
+        from{opacity:0; transform:translateY(18px);}
+        to{opacity:1; transform:translateY(0);}
+    }
+    @keyframes pulse-glow{
+        0%,100%{filter:drop-shadow(0 0 14px rgba(124,58,237,0.35));}
+        50%{filter:drop-shadow(0 0 28px rgba(124,58,237,0.6));}
+    }
+    @media (prefers-reduced-motion:reduce){
+        .hero-content, .hero-emblem{animation:none;}
+    }
+    @media (max-width:768px){
+        .hero{grid-template-columns:1fr; text-align:left;}
+        .hero-emblem{justify-self:start; margin-top:1.5rem;}
     }
     .kicker{
         font-family:'Rajdhani', sans-serif;
@@ -68,9 +123,9 @@
     .hero-title{
         font-family:'Rajdhani', sans-serif;
         font-weight:700;
-        font-size:64px;
-        line-height:1.02;
-        letter-spacing:-1px;
+        font-size:68px;
+        line-height:1.0;
+        letter-spacing:-1.5px;
         color:var(--text-hi);
         text-shadow:0 0 40px rgba(124,58,237,0.35);
     }
@@ -78,10 +133,26 @@
         color:var(--text-lo);
         font-weight:500;
         font-size:19px;
-        margin-top:14px;
-        max-width:560px;
+        margin-top:16px;
+        max-width:520px;
     }
     .hero-subtitle b{color:var(--vibranium-glow); font-weight:600;}
+
+    .hero-stats{
+        display:flex; gap:0;
+        margin-top:32px;
+        border-top:1px solid var(--line);
+        padding-top:18px;
+        max-width:520px;
+    }
+    .hero-stats div{padding-right:28px; margin-right:28px; border-right:1px solid var(--line);}
+    .hero-stats div:last-child{border-right:none; margin-right:0;}
+    .stat-num{
+        font-family:'Rajdhani', sans-serif; font-weight:700; font-size:26px; color:var(--text-hi); display:block;
+    }
+    .stat-label{
+        font-family:'Rajdhani', sans-serif; font-weight:600; font-size:12px; letter-spacing:1.5px; color:var(--text-lo);
+    }
 
     /* PANEL - angular vibranium panel */
     .panel{
@@ -91,6 +162,12 @@
         clip-path:polygon(18px 0, 100% 0, 100% calc(100% - 18px), calc(100% - 18px) 100%, 0 100%, 0 18px);
         padding:30px 32px;
         margin-bottom:22px;
+        transition:border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+    }
+    .panel:hover{
+        border-color:rgba(177,140,245,0.55);
+        box-shadow:0 18px 40px rgba(124,58,237,0.14);
+        transform:translateY(-2px);
     }
     .panel::after{
         content:"";
@@ -190,6 +267,7 @@
     .project-links{margin-top:14px; display:flex; gap:20px; flex-wrap:wrap;}
 
     .section-label{margin-top:34px; margin-bottom:16px;}
+    [id]{scroll-margin-top:80px;}
 
     .text-center{text-align:center;}
 
@@ -199,17 +277,51 @@
 <body>
 <div class="texture"></div>
 
+<!-- TOP NAV -->
+<nav class="topnav">
+    <div class="topnav-inner">
+        <div class="brand-mark">
+            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <polygon points="20,2 36,11 36,29 20,38 4,29 4,11" stroke="#c9a648" stroke-width="1.4"/>
+                <polygon points="20,10 29,15 29,25 20,30 11,25 11,15" fill="#7c3aed" opacity="0.55"/>
+            </svg>
+            RKS
+        </div>
+        <div class="navlinks">
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </div>
+</nav>
+
 <div class="container">
 
     <!-- HERO -->
     <div class="hero">
-        <div class="kicker"><span class="dash"></span>WAKANDA-GRADE ENGINEERING &amp; DATA SCIENCE</div>
-        <div class="hero-title">Roshan Kumar Sah</div>
-        <div class="hero-subtitle">Chemical Engineering Undergraduate at NIT Durgapur, forging <b>process systems</b> and <b>machine learning</b> into one discipline.</div>
+        <div class="hero-content">
+            <div class="kicker"><span class="dash"></span>WAKANDA-GRADE ENGINEERING &amp; DATA SCIENCE</div>
+            <div class="hero-title">Roshan Kumar<br>Sah</div>
+            <div class="hero-subtitle">Chemical Engineering Undergraduate at NIT Durgapur, forging <b>process systems</b> and <b>machine learning</b> into one discipline.</div>
+            <div class="hero-stats">
+                <div><span class="stat-num">2029</span><span class="stat-label">GRAD YEAR</span></div>
+                <div><span class="stat-num">6+</span><span class="stat-label">PROJECTS SHIPPED</span></div>
+                <div><span class="stat-num">NIT-D</span><span class="stat-label">DURGAPUR</span></div>
+            </div>
+        </div>
+        <div class="hero-emblem">
+            <svg width="160" height="160" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <polygon points="100,6 186,52 186,148 100,194 14,148 14,52" stroke="#c9a648" stroke-width="1.5" fill="none" opacity="0.7"/>
+                <polygon points="100,30 164,64 164,136 100,170 36,136 36,64" stroke="#b18cf5" stroke-width="1" fill="rgba(124,58,237,0.08)"/>
+                <path d="M100 55 L128 78 L120 100 L134 128 L100 148 L66 128 L80 100 L72 78 Z" fill="#7c3aed" opacity="0.5" stroke="#b18cf5" stroke-width="1"/>
+                <circle cx="100" cy="100" r="6" fill="#c9a648"/>
+            </svg>
+        </div>
     </div>
 
     <!-- ABOUT ME -->
-    <div class="grid-2" style="margin-bottom:22px;">
+    <div id="about" class="grid-2" style="margin-bottom:22px;">
         <div class="panel profile-frame">
             <img src="./images/image.jpeg" alt="Roshan Kumar Sah" class="profile-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
             <div class="img-fallback">PORTRAIT<br><small style="color:var(--text-lo); font-family:'Inter',sans-serif;">images/image.jpeg</small></div>
@@ -222,7 +334,7 @@
     </div>
 
     <!-- EDUCATION & SKILLS -->
-    <div class="grid-equal">
+    <div id="skills" class="grid-equal">
         <div class="panel">
             <h2>Education</h2>
             <p><b style="color:var(--text-hi);">Degree:</b> B.Tech in Chemical Engineering<br>
@@ -245,6 +357,7 @@
     </div>
 
     <!-- PROJECTS -->
+    <div id="projects">
     <h2 class="section-label">Featured Projects</h2>
 
     <div class="grid-equal">
@@ -304,8 +417,10 @@
         </div>
     </div>
 
+    </div>
+
     <!-- CONTACT -->
-    <div class="panel text-center" style="margin-top:12px;">
+    <div id="contact" class="panel text-center" style="margin-top:12px;">
         <div class="kicker" style="justify-content:center;"><span class="dash"></span>OPEN TO OPPORTUNITIES</div>
         <h2 style="justify-content:center;">Let's Connect</h2>
         <p style="margin-bottom:22px;">Actively looking for opportunities in data science and engineering.</p>
